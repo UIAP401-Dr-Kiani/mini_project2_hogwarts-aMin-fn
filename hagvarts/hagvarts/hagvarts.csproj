@@ -46,7 +46,8 @@
     <Compile Include="AllowedPeople.cs" />
     <Compile Include="Botanical.cs" />
     <Compile Include="Chemistry.cs" />
-    <Compile Include="Dambeldor%28admin%29.cs" />
+    <Compile Include="Dambeldor.cs" />
+    <Compile Include="Dorm.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="human.cs" />
     <Compile Include="Lesson.cs" />

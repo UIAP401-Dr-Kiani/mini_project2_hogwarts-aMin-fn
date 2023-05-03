@@ -1,63 +1,87 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-//using (StreamReader file = new StreamReader("file.tsv"))
 
 namespace hagvarts
 {
     public class Program
     {
 
+
         static void Main(string[] args)
         {
             // writen by amin
             // khundan file
-            using (StreamReader file = new StreamReader("file.tsv"))
+            int j = 0;
+            string ln = File.ReadAllText("TXT_DATA.tsv");
+            string[] humanNum = ln.Split('\n');
+
+
+            string[] Human = ln.Split('\t', '\n').ToArray<string>();
+            human[] h = new human[Human.Length + 10];
+
+
+
+
+
+            for (int i = 0; i < humanNum.Length - 1; i++)
             {
-                string ln;
-                while ((ln = file.ReadLine()) != null)
-                {
 
-                    string[] Human = ln.Split('t').ToArray<string>();
-                    human[] h = new human[Human.Length];
-                    for (int j = 0; j / 8 < Human.Length; j++)
-                    {
-                        int i = 0;
+                h[i] = new human();
 
-                        h[i].name = Human[j];
-                        i++;
-                        h[i].family = Human[j];
-                        i++;
-                        h[i].dateOfBirth = Human[j];
-                        i++;
-                        h[i].gender = Human[j];
-                        i++;
-                        h[i].father = Human[j];
-                        i++;
-                        h[i].username = Human[j];
-                        i++;
-                        h[i].password = Human[j];
-                        i++;
-                        h[i].racetype = Human[j];
-                        i++;
-                        h[i].role = Human[j];
 
-                    }
+                h[i].name = Human[j];
+                j++;
+                h[i].family = Human[j];
+                j++;
+                h[i].dateOfBirth = Human[j];
+                j++;
+                h[i].gender = Human[j];
+                j++;
+                h[i].father = Human[j];
+                j++;
+                h[i].username = Human[j];
+                j++;
+                h[i].password = Human[j];
+                j++;
+                h[i].racetype = Human[j];
+                j++;
+                h[i].role = Human[j];
+                j++;
 
-                }
-                file.Close();
             }
+            //fersadn letter be students
+
+                for (int i = 0; i < 300; i++)
+                {
+                    if (h[i].role == "student")
+                    {
+                        Dambeldor.SendLetter(h[i].name, h[i].family, Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
+                    }
+                }
             
-            
+            Console.ReadKey();
+
+
+
+
+
+
+
+
 
 
 
 
 
         }
+
     }
 }
+
+

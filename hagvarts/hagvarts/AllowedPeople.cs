@@ -22,8 +22,7 @@ namespace hagvarts
             teacher =1,
             student =2,
         };
-        //public string[] Letter = new string[100]; 
-        //public List<string> LetterList = new List<string>();
-
+        public string letter;
+        
     }
 }

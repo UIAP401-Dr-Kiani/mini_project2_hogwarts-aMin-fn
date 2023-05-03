@@ -1,0 +1,8 @@
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\hagvarts.exe.config
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\hagvarts.exe
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\hagvarts.pdb
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.exe
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.pdb

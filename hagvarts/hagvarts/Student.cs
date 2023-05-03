@@ -10,7 +10,7 @@ namespace hagvarts
     {
         public int passedUnits;
         public int semester;
-        public int dormitoryNumber;
+        public int dormNumber;
 
     }
 }
