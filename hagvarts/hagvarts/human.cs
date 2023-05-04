@@ -23,7 +23,10 @@ namespace hagvarts
         //};
         public string racetype;
         public string role;
-        
+        public string timeGo;
+        public string cabinNum;
+        public string sitNum;
+
 
     }
 }

@@ -51,6 +51,7 @@
     <Compile Include="Group.cs" />
     <Compile Include="human.cs" />
     <Compile Include="Lesson.cs" />
+    <Compile Include="Massages.cs" />
     <Compile Include="Occultism.cs" />
     <Compile Include="Plants.cs" />
     <Compile Include="Program.cs" />

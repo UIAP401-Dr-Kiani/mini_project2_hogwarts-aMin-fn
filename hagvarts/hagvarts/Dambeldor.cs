@@ -13,6 +13,7 @@ namespace hagvarts
         {
             Console.WriteLine($"Hi {name} {family} . You are allowed to come to hagvarts. ");
             Console.WriteLine($"Your ticket is at : {timeGo} in the {cabinNum} cabin and {sitNum} sit");
+            
 
         }
     }
