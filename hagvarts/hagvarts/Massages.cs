@@ -22,7 +22,11 @@ namespace hagvarts
             Console.WriteLine("3.semester(s)");
             Console.WriteLine("4.dormNumber(d)");
         }
-        
+        public static void dambeldorChoise()
+        {
+            Console.WriteLine("1.send letter(s)");
+            Console.WriteLine("2.list of dorm(l)");
+        }
        
     }
 }

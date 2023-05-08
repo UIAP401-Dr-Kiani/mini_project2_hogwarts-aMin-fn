@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace hagvarts
 {
+    public enum Pet
+    {
+        rat,
+        cat,
+        owl,
+    };
     public class AllowedPeople:human
     {
         public string Curriculum;
-        public string pet;
-        //public enum Pet
-        //{
-        //    rat =1,
-        //    cat =2,
-        //    owl =3,
-        //};
+        public Pet pet;
         public string Group;
         public bool Luggage;
         //public enum Role

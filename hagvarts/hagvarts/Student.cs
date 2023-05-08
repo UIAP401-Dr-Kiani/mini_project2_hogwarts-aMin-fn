@@ -13,7 +13,7 @@ namespace hagvarts
         public int dormNumber;
         
 
-        public Student(string Name, string Family, string TimeGo, string CabinNum, string SitNum)
+        public Student(string Name, string Family, DateTime TimeGo, string CabinNum, string SitNum)
         {
             this.name = Name;
             this.family = Family;
@@ -22,6 +22,7 @@ namespace hagvarts
             this.sitNum = SitNum;
             
         }
+        
 
     }
 }

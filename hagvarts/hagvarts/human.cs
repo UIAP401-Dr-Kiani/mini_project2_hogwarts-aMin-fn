@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace hagvarts
 {
+    public enum Racetype
+    {
+        Half_blood,
+        Pure_blood,
+        Muggle_blood
+    };
     public class human
     {
         public string name;
@@ -15,15 +21,11 @@ namespace hagvarts
         public string father;
         public string username;
         public string password;
-        //public enum racetype
-        //{
-        //    Halfblood,
-        //    Pureblood,
-        //    Muggleblood
-        //};
-        public string racetype;
+        
+        public Racetype racetype;
+        //public string racetype;
         public string role;
-        public string timeGo;
+        public DateTime timeGo;
         public string cabinNum;
         public string sitNum;
 
