@@ -12,17 +12,19 @@ namespace hagvarts
         cat,
         owl,
     };
+    public enum Role
+    {
+        teacher,
+        student,
+    };
     public class AllowedPeople:human
     {
         public string Curriculum;
         public Pet pet;
         public string Group;
         public bool Luggage;
-        //public enum Role
-        //{
-        //    teacher =1,
-        //    student =2,
-        //};
+        public Role role;
+       
         //public string timeGo;
         //public string cabinNum;
         //public string sitNum;

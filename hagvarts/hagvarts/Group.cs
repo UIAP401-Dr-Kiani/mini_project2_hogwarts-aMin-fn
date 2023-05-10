@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,11 +14,25 @@ namespace hagvarts
         Ravenclaw = 3,
         Slytherin = 4
     };
-    public class Group
+    public class Group:AllowedPeople
     {
-        public Type type;
+        public Type _type;
+        public string type;
         public int score;
         public string listOfpeopleInGp;
         public string listOfQPlayers;
+        static Random _R = new Random();
+         public static T RandomEnumValue<T>()
+        {
+            var v = Enum.GetValues(typeof(T));
+            return (T)v.GetValue(_R.Next(v.Length));
+        }
+        //public static void ListOfGroup(string GroupName)
+        //{
+        //    while(GroupName == "Hufflepuff")
+        //    {
+        //        Console.WriteLine();
+        //    }
+        //}
     }
 }

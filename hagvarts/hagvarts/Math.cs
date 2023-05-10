@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace hagvarts
 {
-    public class Chemistry:Lesson
+    public class Math:Lesson
     {
-        public string listOfChemicals;
-        
     }
 }

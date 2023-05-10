@@ -26,8 +26,8 @@ namespace hagvarts
         //public string racetype;
         public string role;
         public DateTime timeGo;
-        public string cabinNum;
-        public string sitNum;
+        public int cabinNum;
+        public int sitNum;
 
 
     }

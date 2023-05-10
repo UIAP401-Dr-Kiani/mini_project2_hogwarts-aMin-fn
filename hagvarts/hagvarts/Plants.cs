@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace hagvarts
 {
-    public class Plants
+    public class Plants:Lesson
     {
         public string name;
         public int number;

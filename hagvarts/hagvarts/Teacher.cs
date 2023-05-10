@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace hagvarts
 {
-    public class Teacher:AllowedPeople
+    public class Teacher : AllowedPeople
     {
-        public bool simultaneousTeaching;
+        private bool _simultaneousTeaching;
+        public bool simultaneousTeaching { get; set; }
+        public string Lesson1 { get; set; }
+        public string Lesson2 { get; set; }
+        public string TimeClass1 { get; set; }
+        public string TimeClass2 { get; set;}
     }
 }

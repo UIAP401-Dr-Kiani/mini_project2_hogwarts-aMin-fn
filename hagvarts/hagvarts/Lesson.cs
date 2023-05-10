@@ -8,11 +8,11 @@ namespace hagvarts
 {
     public class Lesson
     {
-        public string time;
-        public int numOfStudends;
-        public int capacity;
-        public string offerSemester;
-        public string name;
+        public string timeL;
+        public int numOfStudendsL;
+        public int capacityL;
+        public string offerSemesterL;
+        public string nameL;
 
 
     }
