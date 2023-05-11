@@ -11,8 +11,24 @@ namespace hagvarts
     {
         public int _passedUnits;
         public int _semester;
-        public int _dormNumber;
-        
+        public int _bednum;
+        public int _roomnum;
+        public int _floornum;
+        //public string dormnum(int a, int b , int c)
+        //{
+        //    this._bednum = a;
+        //    this._roomnum = b;
+        //    this._floornum = c;
+        //    return $"floor : {_floornum}  room : {_roomnum}  bed : {_bednum}";
+
+        //}
+        //public v (int bednum,int roomnum,int floornum)
+        //{
+        //    this._bednum = bednum;
+        //    this._roomnum = roomnum;
+        //    this._floornum = floornum;
+        //}
+
 
         //public Student(string Name, string Family, DateTime TimeGo, int CabinNum, int SitNum)
         //{
@@ -21,9 +37,9 @@ namespace hagvarts
         //    this.timeGo = TimeGo;
         //    this.cabinNum = CabinNum;
         //    this.sitNum = SitNum;
-            
+
         //}
-        
+
 
     }
 }

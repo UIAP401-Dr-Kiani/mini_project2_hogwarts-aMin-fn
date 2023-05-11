@@ -15,17 +15,17 @@ namespace hagvarts
             Ravenclaw = 3,
             Slytherin = 4
         };
-        public string floor;
-        public string room;
-        public string bed;
+        public int floor;
+        public int room;
+        public int bed;
         public string gender;
 
-        public Dorm(string a , string b, string c)
+        public Dorm(int a, int b, int c)
         {
-            this.floor = a;
+            this.bed = a;
             this.room = b;
-            this.bed = c;
+            this.floor = c;
         }
-            
+
     }
 }

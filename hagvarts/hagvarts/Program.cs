@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -112,12 +113,37 @@ namespace hagvarts
                     s[StuCounter].timeGo = h[i].timeGo;
                     s[StuCounter].cabinNum = h[i].cabinNum;
                     s[StuCounter].sitNum = h[i].sitNum;
+                    s[StuCounter].father = h[i].father;
                     s[StuCounter].username = h[i].username;
                     s[StuCounter].password = h[i].password;
                     s[StuCounter].dateOfBirth = h[i].dateOfBirth;
                     s[StuCounter].gender = h[i].gender;
                     s[StuCounter].pet = h[i].pet;
+
                     StuCounter++;
+
+                }
+            }
+            int TchCounter = 0;
+            Teacher[] t = new Teacher[teacherNum];
+            Random r3 = new Random();
+            for (i = 0; i < 300; i++)
+            {
+                if (h[i].role == Role.teacher)
+                {
+
+                    t[TchCounter] = new Teacher();
+                    t[TchCounter].name = h[i].name;
+                    t[TchCounter].family = h[i].family;
+                    t[TchCounter].father= h[i].father;  
+                    t[TchCounter].username = h[i].username;
+                    t[TchCounter].password = h[i].password;
+                    t[TchCounter].dateOfBirth = h[i].dateOfBirth;
+                    t[TchCounter].gender = h[i].gender;
+                    t[TchCounter].pet = h[i].pet;
+                    t[TchCounter].simultaneousTeaching = Convert.ToBoolean(r3.Next(0, 1));
+
+                    TchCounter++;
 
                 }
             }
@@ -164,7 +190,7 @@ namespace hagvarts
 
             //}
             int k = 0;
-
+            int groupCounter = 0;
 
 
 
@@ -172,70 +198,61 @@ namespace hagvarts
 
 
             // raftan be qazakhori
-            //Random randomType= new Random();
-            //Console.WriteLine("Students go to the cafeteria");
+
             Group[] group = new Group[300];
-            //group[0] = new Group();
-            //group[0].type = Convert.ChangeType() ;
+
+            Dorm[] dorm = new Dorm[300];
+
+
             for (i = 0; i < studentNum; i++)
             {
+
                 group[i] = new Group();
                 var value = Group.RandomEnumValue<Type>();
-                group[i].type =  value.ToString();
-               
-            }
-            
-            string GroupName = Console.ReadLine();
-            switch (GroupName)
-            {
-                case "Hufflepuff":
-                    {
-                        for (i = 0; i < studentNum; i++)
-                        {
-                            if (group[i].type == "Hufflepuff")
-                            {
-                                
-                            }
-                        }
-                        break;
-                    }
-                case "Gryffindor":
-                    {
-                        for (i = 0; i < studentNum; i++)
-                        {
-                            if (group[i].type == "Gryffindor")
-                            {
-                                Console.WriteLine($"{group[i].name} {group[i].family}");
-                            }
-                        }
-                        break;
-                    }
-                case "Ravenclaw":
-                    {
-                        for (i = 0; i < studentNum; i++)
-                        {
-                            if (group[i].type == "Ravenclaw")
-                            {
-                                Console.WriteLine($"{group[i].name} {group[i].family}");
-                            }
-                        }
+                group[i].type = value.ToString();
+                group[i].name = s[i].name;
+                group[i].family = s[i].family;
+                s[i].Group = group[i].type;
+                if(i<teacherNum)
+                t[i].Group = group[i].type;
 
-                        break;
-                    }
-                case "Slytherin":
-                    {
-                        for (i = 0; i < studentNum; i++)
-                        {
-                            if (group[i].type == "Slytherin")
-                            {
-                                Console.WriteLine($"{group[i].name} {group[i].family}");
-                            }
-                        }
-                        break;
-                    }
-                default:
-                    break;
+
+
             }
+            int dormcounter = 0;
+
+            // khabgah ha
+            try
+            {
+                for (k = 1; k <= 6; k++)
+                {
+                    for (j = 1; j <= 10; j++)
+                    {
+                        for (i = 1; i <= 5; i++)
+                        {
+                            dorm[dormcounter] = new Dorm(i,j,k);
+                            
+
+
+
+                            s[dormcounter]._roomnum = dorm[dormcounter].room;
+                            s[dormcounter]._bednum = dorm[dormcounter].bed;
+                            s[dormcounter]._floornum = dorm[dormcounter].floor;
+
+                            dormcounter++;
+
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                dorm[dormcounter].bed = 0;
+                dorm[dormcounter].room = 0;
+                dorm[dormcounter].floor = 0;
+            }
+
+
 
 
 
@@ -290,20 +307,44 @@ namespace hagvarts
                                 {
                                     case "i":
 
-
+                                        Console.ForegroundColor= ConsoleColor.Yellow;
 
                                         Console.WriteLine($"name : {s[temp].name}");
+                                        Thread.Sleep(500);
                                         Console.WriteLine($"family : {s[temp].family}");
+                                        Thread.Sleep(500);
+
                                         Console.WriteLine($"dateOfBirth : {s[temp].dateOfBirth}");
+                                        Thread.Sleep(500);
+
                                         Console.WriteLine($"gender : {s[temp].gender}");
+                                        Thread.Sleep(500);
+
                                         Console.WriteLine($"father : {s[temp].father}");
+                                        Thread.Sleep(500);
+
                                         Console.WriteLine($"username : {s[temp].username}");
+                                        Thread.Sleep(500);
+
                                         Console.WriteLine($"password : {s[temp].password}");
+                                        Thread.Sleep(500);
+
                                         Console.WriteLine($"raceType : {s[temp].racetype}");
-                                        Console.WriteLine($"role : {s[temp].role}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"role : student");
+                                        Thread.Sleep(500);
+
                                         Console.WriteLine($"group : {s[temp].Group}");
+                                        Thread.Sleep(500);
+
                                         Console.WriteLine($"haveing luggage : {s[temp].Luggage}");
+                                        Thread.Sleep(500);
+
                                         Console.WriteLine($"pet : {s[temp].pet}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"dorm => floor : {s[temp]._floornum} room : {s[temp]._roomnum} bed : {s[temp]._bednum} ");
 
                                         break;
 
@@ -369,28 +410,7 @@ namespace hagvarts
                         }
                     case "t":
                         {
-                            int TchCounter = 0;
-                            Teacher[] t = new Teacher[teacherNum];
-                            Random r3 = new Random();
-                            for (i = 0; i < 300; i++)
-                            {
-                                if (h[i].role == Role.teacher)
-                                {
-
-                                    t[TchCounter] = new Teacher();
-                                    t[TchCounter].name = h[i].name;
-                                    t[TchCounter].family = h[i].family;
-                                    t[TchCounter].username = h[i].username;
-                                    t[TchCounter].password = h[i].password;
-                                    t[TchCounter].dateOfBirth = h[i].dateOfBirth;
-                                    t[TchCounter].gender = h[i].gender;
-                                    t[TchCounter].pet = h[i].pet;
-                                    t[TchCounter].simultaneousTeaching = Convert.ToBoolean(r3.Next(0, 1));
-
-                                    TchCounter++;
-
-                                }
-                            }
+                            
 
 
                             Console.WriteLine("enter your name and family : ");
@@ -400,7 +420,7 @@ namespace hagvarts
                             string aimFamily = Console.ReadLine();
                             for (i = 0; i < teacherNum; i++)
                             {
-                                if (s[i].name == aimName && s[i].family == aimFamily)
+                                if (t[i].name == aimName && t[i].family == aimFamily)
                                 {
                                     tchAllow = true;
                                     temp = i;
@@ -408,24 +428,39 @@ namespace hagvarts
                             }
                             if (tchAllow)
                             {
-                                Console.WriteLine("1.information(i)     2.Lesson presentation(p)       3.students' score");
+                                Massages.teacherChoise();
                                 string tchChoise = Console.ReadLine();
                                 switch (tchChoise)
                                 {
                                     case "i":
                                         {
+                                            Console.ForegroundColor = ConsoleColor.Yellow;
                                             Console.WriteLine($"name : {t[temp].name}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"family : {t[temp].family}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"dateOfBirth : {t[temp].dateOfBirth}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"gender : {t[temp].gender}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"father : {t[temp].father}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"username : {t[temp].username}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"password : {t[temp].password}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"raceType : {t[temp].racetype}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"role : {t[temp].role}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"group : {t[temp].Group}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"haveing luggage : {t[temp].Luggage}");
+                                            Thread.Sleep(500);
                                             Console.WriteLine($"pet : {t[temp].pet}");
+                                            Thread.Sleep(500);
+
+                                            Console.ResetColor();
 
                                             Console.WriteLine(" if you like to add another lesson write 'yes' else write no");
                                             string teacheradd = Console.ReadLine();
@@ -470,6 +505,77 @@ namespace hagvarts
                                         }
                                     case "s":
                                         {
+                                            break;
+                                        }
+                                    case "g":
+                                        {
+                                            Group huffle = new Group();
+                                            Console.WriteLine("choose one : \n Hufflepuff       Gryffindor      Slytherin       Ravenclaw");
+                                            string GroupName = Console.ReadLine();
+                                            switch (GroupName)
+                                            {
+                                                case "Hufflepuff":
+                                                    {
+                                                        Console.WriteLine("the list of Hufflepuff is : ");
+
+                                                        for (i = 0; i < studentNum; i++)
+                                                        {
+                                                            if (group[i].type == "Hufflepuff")
+                                                            {
+                                                                Console.WriteLine(group[i].name + " " + group[i].family);
+
+                                                            }
+                                                        }
+
+                                                        break;
+                                                    }
+                                                case "Gryffindor":
+                                                    {
+                                                        Console.WriteLine("the list of Gryffindor is : ");
+
+                                                        for (i = 0; i < studentNum; i++)
+                                                        {
+                                                            if (group[i].type == "Gryffindor")
+                                                            {
+                                                                Console.WriteLine(group[i].name + " " + group[i].family);
+
+                                                            }
+                                                        }
+
+                                                        break;
+                                                    }
+                                                case "Ravenclaw":
+                                                    {
+                                                        Console.WriteLine("the list of Ravenclaw is : ");
+
+                                                        for (i = 0; i < studentNum; i++)
+                                                        {
+                                                            if (group[i].type == "Ravenclaw")
+                                                            {
+                                                                Console.WriteLine(group[i].name + " " + group[i].family);
+
+
+                                                            }
+                                                        }
+
+                                                        break;
+                                                    }
+                                                case "Slytherin":
+                                                    {
+                                                        Console.WriteLine("the list of Slytherin is : ");
+                                                        for (i = 0; i < studentNum; i++)
+                                                        {
+                                                            if (group[i].type == "Slytherin")
+                                                            {
+                                                                Console.WriteLine(group[i].name + " " + group[i].family);
+
+                                                            }
+                                                        }
+                                                        break;
+                                                    }
+                                                default:
+                                                    break;
+                                            }
                                             break;
                                         }
                                 }
@@ -520,7 +626,7 @@ namespace hagvarts
                                         for (i = k - 1; i >= 0; i--)
                                         {
                                             Console.WriteLine($" '{letters[i]}' from : {s[temps[y]].name} {s[temps[y]].family} ");
-                                           
+
                                             Console.WriteLine($"will you let {s[temps[y]].name} {s[temps[y]].family} ? ");
                                             string allow = Console.ReadLine();
                                             if (allow == "yes")
@@ -528,7 +634,7 @@ namespace hagvarts
                                                 //Console.WriteLine("writ");
                                                 //string NameA = Console.ReadLine();
                                                 //string FamilyA = Console.ReadLine();
-                                                
+
 
                                                 //string NameAim = Console.ReadLine();
 
@@ -545,7 +651,7 @@ namespace hagvarts
                                             }
                                             y++;
                                         }
-                                        
+
 
 
                                         break;
@@ -556,7 +662,17 @@ namespace hagvarts
 
                     default:
                         break;
+
                 }
+                Console.ForegroundColor= ConsoleColor.Cyan;
+                Console.WriteLine("do you want do continue ? press 'y'");
+                string permission = Console.ReadLine();
+                if (permission == "y")
+                {
+                    Console.Clear();
+                }
+                Console.ResetColor();
+
             }
 
 

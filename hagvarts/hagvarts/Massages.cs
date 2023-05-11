@@ -43,7 +43,7 @@ namespace hagvarts
         }
        public static void teacherChoise()
         {
-            Console.WriteLine("1.information(i)     2.Lesson presentation       3.students' score");
+            Console.WriteLine("1.information(i)     2.Lesson presentation       3.students' score       4.Groups(g)");
         }
     }
 }

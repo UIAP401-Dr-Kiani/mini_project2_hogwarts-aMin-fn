@@ -14,25 +14,32 @@ namespace hagvarts
         Ravenclaw = 3,
         Slytherin = 4
     };
-    public class Group:AllowedPeople
+    public class Group : Student
     {
         public Type _type;
         public string type;
         public int score;
-        public string listOfpeopleInGp;
-        public string listOfQPlayers;
-        static Random _R = new Random();
-         public static T RandomEnumValue<T>()
-        {
-            var v = Enum.GetValues(typeof(T));
-            return (T)v.GetValue(_R.Next(v.Length));
-        }
-        //public static void ListOfGroup(string GroupName)
+        public string[] listOfpeopleInGp = new string[100];
+        //public static void people(string name, string family, string Length)
         //{
-        //    while(GroupName == "Hufflepuff")
+        //    for (int i = 0; i < Length; i++)
         //    {
-        //        Console.WriteLine();
+        //        Console.WriteLine(name + family);
         //    }
         //}
+        public string listOfQPlayers;
+    static Random _R = new Random();
+    public static T RandomEnumValue<T>()
+    {
+        var v = Enum.GetValues(typeof(T));
+        return (T)v.GetValue(_R.Next(v.Length));
     }
+    //public static void ListOfGroup(string GroupName)
+    //{
+    //    while(GroupName == "Hufflepuff")
+    //    {
+    //        Console.WriteLine();
+    //    }
+    //}
+}
 }
