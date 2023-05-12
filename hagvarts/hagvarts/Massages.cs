@@ -24,7 +24,7 @@ namespace hagvarts
         public static void studentChoise()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("1.information(i)     2.passedUnits(p)       3.semester(s)       4.dormNumber(d)      5.letters(l)       6.send letter to Dambeldor");
+            Console.WriteLine("1.information(i)     2.passedUnits(p)       3.semester(s)       4.dormNumber(d)      5.letters(l)       6.send letter to Dambeldor      ");
 
             Thread.Sleep(750);
             //Thread.Sleep(750);

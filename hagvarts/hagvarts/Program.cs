@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -125,7 +126,7 @@ namespace hagvarts
                 }
             }
             int TchCounter = 0;
-            Teacher[] t = new Teacher[teacherNum];
+            Teacher[] t = new Teacher[300];
             Random r3 = new Random();
             for (i = 0; i < 300; i++)
             {
@@ -135,7 +136,7 @@ namespace hagvarts
                     t[TchCounter] = new Teacher();
                     t[TchCounter].name = h[i].name;
                     t[TchCounter].family = h[i].family;
-                    t[TchCounter].father= h[i].father;  
+                    t[TchCounter].father = h[i].father;
                     t[TchCounter].username = h[i].username;
                     t[TchCounter].password = h[i].password;
                     t[TchCounter].dateOfBirth = h[i].dateOfBirth;
@@ -213,8 +214,8 @@ namespace hagvarts
                 group[i].name = s[i].name;
                 group[i].family = s[i].family;
                 s[i].Group = group[i].type;
-                if(i<teacherNum)
-                t[i].Group = group[i].type;
+                if (i < teacherNum)
+                    t[i].Group = group[i].type;
 
 
 
@@ -230,8 +231,8 @@ namespace hagvarts
                     {
                         for (i = 1; i <= 5; i++)
                         {
-                            dorm[dormcounter] = new Dorm(i,j,k);
-                            
+                            dorm[dormcounter] = new Dorm(i, j, k);
+
 
 
 
@@ -247,16 +248,19 @@ namespace hagvarts
             }
             catch
             {
-                dorm[dormcounter].bed = 0;
-                dorm[dormcounter].room = 0;
-                dorm[dormcounter].floor = 0;
+                //s[dormcounter]._bednum = 0;
+                //s[dormcounter]._roomnum = 0;
+                //s[dormcounter]._floornum = dorm[dormcounter].floor;
+              
+
+
+
+
             }
 
 
 
-
-
-
+            
 
 
 
@@ -307,7 +311,7 @@ namespace hagvarts
                                 {
                                     case "i":
 
-                                        Console.ForegroundColor= ConsoleColor.Yellow;
+                                        Console.ForegroundColor = ConsoleColor.Yellow;
 
                                         Console.WriteLine($"name : {s[temp].name}");
                                         Thread.Sleep(500);
@@ -345,6 +349,21 @@ namespace hagvarts
                                         Thread.Sleep(500);
 
                                         Console.WriteLine($"dorm => floor : {s[temp]._floornum} room : {s[temp]._roomnum} bed : {s[temp]._bednum} ");
+
+                                        Console.WriteLine("list of lessons(ll)");
+                                        string ll = Console.ReadLine();
+                                        if(ll == "ll" )
+                                        {
+                                            Random randomdayofweek = new Random();
+                                            var list2 = new List<string> { "satarday", "sunday", "monday", "tuesday", "thursday" };
+                                            int index2 = randomdayofweek.Next(list2.Count);
+
+                                            Console.WriteLine($"sport :teacher : {t[0].name} {t[0].family} time => day : {list2[index2]}  hour : {randomdayofweek.Next(1, 24)} ");
+                                            Console.WriteLine($"Literature :teacher : {t[1].name} {t[1].family} time : => day : {list2[index2]}  hour : {randomdayofweek.Next(1, 24)} ");
+                                            Console.WriteLine($"Botancial :teacher : {t[2].name} {t[2].family} time : => day : {list2[index2]}  hour : {randomdayofweek.Next(1, 24)} ");
+                                            Console.WriteLine($"Math :teacher : {t[3].name} {t[3].family}  time :  => day : {list2[index2]}  hour : {randomdayofweek.Next(1, 24)} ");
+                                            Console.WriteLine($"Physics :teacher : {t[3].name} {t[3].family}  time :  => day : {list2[index2]}  hour : {randomdayofweek.Next(1, 24)} ");
+                                        }
 
                                         break;
 
@@ -394,6 +413,33 @@ namespace hagvarts
 
                                             break;
                                         }
+                                    
+
+                                        Console.WriteLine("your lessons are : Sport, Literature, Botancial, Math, Physics");
+                                        //Console.WriteLine($"sport :teacher : {t[temp].name} {t[temp].family} time : {t[temp].TimeClass1}");
+                                        //Console.WriteLine(t[temp].Lesson1);
+                                        //Console.WriteLine(t[temp].TimeClass1);
+                                        //var list2 = new List<string> { "Sport", "Literature", "Botancial", "Math", "Physics" };
+
+                                        //DateTime date2 = DateTime.Now;
+                                        //Random r2 = new Random();
+                                        //for (i = 0; i < teacherNum; i++)
+                                        //{
+                                        //    int index = r2.Next(list2.Count);
+                                        //    t[i].Lesson1 = list2[index];
+
+                                        //    t[i].TimeClass1 = Convert.ToString(r2.Next(date2.Day, date2.Hour));
+
+
+
+                                        //}
+                                        
+
+
+
+
+
+                                        
 
 
 
@@ -410,7 +456,7 @@ namespace hagvarts
                         }
                     case "t":
                         {
-                            
+
 
 
                             Console.WriteLine("enter your name and family : ");
@@ -484,7 +530,7 @@ namespace hagvarts
                                         }
                                     case "p":
                                         {
-                                            Random r1 = new Random();
+
                                             var list = new List<string> { "Sport", "Literature", "Botancial", "Math", "Physics" };
 
                                             DateTime date = DateTime.Now;
@@ -499,7 +545,6 @@ namespace hagvarts
 
 
                                             }
-
 
                                             break;
                                         }
@@ -618,6 +663,13 @@ namespace hagvarts
                                     }
                                 case "l":
                                     {
+                                        for (i = 0; i < studentNum; i++)
+                                        {
+                                            Console.WriteLine($"floor : {s[i]._floornum}  room : {s[i]._roomnum}  bed : {s[i]._bednum} => {s[i].name} {s[i].family} ");
+                                        }
+                                        
+                                       
+                                       
                                         break;
                                     }
                                 case "i":
@@ -664,7 +716,7 @@ namespace hagvarts
                         break;
 
                 }
-                Console.ForegroundColor= ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("do you want do continue ? press 'y'");
                 string permission = Console.ReadLine();
                 if (permission == "y")
