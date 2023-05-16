@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace hagvarts
 {
-    public class Massages:human
+    public class Massages : human
     {
         public static void choise()
         {
@@ -41,9 +41,26 @@ namespace hagvarts
             Console.WriteLine("2.list of dorm(l)");
             Console.WriteLine("3.inbox(i)");
         }
-       public static void teacherChoise()
+        public static void teacherChoise()
         {
             Console.WriteLine("1.information(i)     2.Lesson presentation       3.students' score       4.Groups(g)");
+        }
+        public static void showUnits()
+        {
+
+            Console.WriteLine("units : ");
+            Console.WriteLine("Sport2       Math2       Physics2        Chemistry       Occultism       ");
+            Console.WriteLine("you should choose them :");
+        }
+        public static void logSemester1(Student []student,int temp)
+        {
+
+            Console.WriteLine($"botanical : {student[temp].ScoreSemester1}");
+            Console.WriteLine($"Math1 : {student[temp].Math1Score}");
+            Console.WriteLine($"Physics1 : {student[temp].Physics1Score}");
+            Console.WriteLine($"Sport1 : {student[temp].Sport1Score}");
+            int sum   = student[temp].Physics1Score+ student[temp].ScoreSemester1+student[temp].Math1Score+student[temp].Sport1Score;
+            Console.WriteLine($"average => {sum/4}");
         }
     }
 }

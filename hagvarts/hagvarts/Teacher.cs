@@ -14,5 +14,12 @@ namespace hagvarts
         public string Lesson2 { get; set; }
         public string TimeClass1 { get; set; }
         public string TimeClass2 { get; set;}
+
+        //public string ExerciseBotanical1(string a ,string b, string c , string d)
+        //{
+        //    Botanical.TheListOfSemester1Plants();
+           
+        //        return "j";
+        //}
     }
 }
