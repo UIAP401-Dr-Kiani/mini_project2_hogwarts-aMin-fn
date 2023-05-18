@@ -8,12 +8,13 @@ namespace hagvarts
 {
     public class Lesson
     {
-        public string timeL;
-        public string DayL;
+        
+        public string []hourtime = new string[20] ;
+        public string []DayL = new string[20];
         public int numOfStudendsL;
         public int capacityL;
         public string offerSemesterL;
-        public string nameL;
+        public string []nameL = new string[20];
         private int _score;
         public Teacher teacher;
         public int Score

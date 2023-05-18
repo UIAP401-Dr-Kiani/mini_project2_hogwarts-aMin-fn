@@ -6,3 +6,14 @@ C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\h
 C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.exe
 C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.pdb
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\Spectre.Console.dll
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\System.Buffers.dll
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\System.Memory.dll
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\Spectre.Console.xml
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\System.Buffers.xml
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\System.Memory.xml
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.csproj.CopyComplete

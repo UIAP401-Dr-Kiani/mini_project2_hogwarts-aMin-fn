@@ -9,6 +9,13 @@ namespace hagvarts
 {
     public class Massages : human
     {
+        public static void Title()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("                                                                           ");
+            Console.WriteLine($"                Hargvarts              {DateTime.Now.ToShortTimeString()} ");
+            Console.WriteLine("---------------------------------------------------------------------------");
+        }
         public static void choise()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -24,7 +31,8 @@ namespace hagvarts
         public static void studentChoise()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("1.information(i)     2.passedUnits(p)       3.semester(s)       4.dormNumber(d)      5.letters(l)       6.send letter to Dambeldor      ");
+            Console.WriteLine("1.information(i)                      2.passedUnits(p)           3.dormNumber(d)                     4.letters(l)");
+            Console.WriteLine("5.send letter to Dambeldor(sd)        6.Practice(pr)             7.score of botanical(ScoreB)        8.LessonLog(log)      ");
 
             Thread.Sleep(750);
             //Thread.Sleep(750);
@@ -37,9 +45,9 @@ namespace hagvarts
         }
         public static void dambeldorChoise()
         {
-            Console.WriteLine("1.send letter(s)");
-            Console.WriteLine("2.list of dorm(l)");
-            Console.WriteLine("3.inbox(i)");
+            Console.WriteLine("1.send letter(s)     2.list of dorm(l)       3.inbox(i)");
+            
+           
         }
         public static void teacherChoise()
         {
@@ -52,15 +60,17 @@ namespace hagvarts
             Console.WriteLine("Sport2       Math2       Physics2        Chemistry       Occultism       ");
             Console.WriteLine("you should choose them :");
         }
-        public static void logSemester1(Student []student,int temp)
+        public static void logSemester1(Student[] student, int temp)
         {
 
             Console.WriteLine($"botanical : {student[temp].ScoreSemester1}");
             Console.WriteLine($"Math1 : {student[temp].Math1Score}");
             Console.WriteLine($"Physics1 : {student[temp].Physics1Score}");
             Console.WriteLine($"Sport1 : {student[temp].Sport1Score}");
-            int sum   = student[temp].Physics1Score+ student[temp].ScoreSemester1+student[temp].Math1Score+student[temp].Sport1Score;
-            Console.WriteLine($"average => {sum/4}");
+            Console.WriteLine($"Literature : {student[temp].LiteratureScore}");
+            
+            
+            
         }
     }
 }

@@ -11,6 +11,24 @@ namespace hagvarts
     {
         public string[] _passedUnits = new string[25];
         public string[] _failedUnits = new string[25];
+        public Student() 
+        {
+
+        }
+        public Student(Lesson lesson,int i ) 
+        {
+
+
+            
+            Random randomdayofweek = new Random();
+            var list2 = new List<string> { "satarday", "sunday", "monday", "tuesday", "thursday" };
+            
+            lesson.nameL[i] = Console.ReadLine();
+            lesson.DayL[i] = list2[randomdayofweek.Next(list2.Count)];
+            lesson.hourtime[i] =Convert.ToString(randomdayofweek.Next(1,24));
+            
+           
+        }
 
 
         public int _semester;
