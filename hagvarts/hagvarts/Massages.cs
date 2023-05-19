@@ -45,7 +45,9 @@ namespace hagvarts
         }
         public static void dambeldorChoise()
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("1.send letter(s)     2.list of dorm(l)       3.inbox(i)");
+            Console.ResetColor();
             
            
         }
@@ -62,12 +64,13 @@ namespace hagvarts
         }
         public static void logSemester1(Student[] student, int temp)
         {
-
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine($"botanical : {student[temp].ScoreSemester1}");
             Console.WriteLine($"Math1 : {student[temp].Math1Score}");
             Console.WriteLine($"Physics1 : {student[temp].Physics1Score}");
             Console.WriteLine($"Sport1 : {student[temp].Sport1Score}");
             Console.WriteLine($"Literature : {student[temp].LiteratureScore}");
+            Console.ResetColor();
             
             
             

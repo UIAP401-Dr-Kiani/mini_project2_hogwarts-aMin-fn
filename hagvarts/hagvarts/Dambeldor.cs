@@ -11,8 +11,10 @@ namespace hagvarts
     {
         public static void SendLetter(string name , string family , DateTime timeGo ,int cabinNum , int sitNum )
         {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine($" {name} {family}  ");
             Console.WriteLine($" Your ticket is at : {timeGo} in the {cabinNum} cabin and {sitNum} sit");
+            Console.ResetColor();
             
 
         }
