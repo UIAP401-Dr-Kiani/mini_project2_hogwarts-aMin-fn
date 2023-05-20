@@ -53,7 +53,7 @@ namespace hagvarts
         }
         public static void teacherChoise()
         {
-            Console.WriteLine("1.information(i)     2.Lesson presentation       3.students' score       4.Groups(g)");
+            Console.WriteLine("1.information(i)     2.Lesson presentation(p)       3.students' score(s)       4.Groups(g)");
         }
         public static void showUnits()
         {
@@ -74,6 +74,13 @@ namespace hagvarts
             
             
             
+        }
+        public static void ClearCurrentConsoleLine()
+        {
+            int currentLineCursor = Console.CursorTop;
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(0, currentLineCursor);
         }
     }
 }

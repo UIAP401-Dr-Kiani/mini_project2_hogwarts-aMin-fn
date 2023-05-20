@@ -287,6 +287,7 @@ namespace hagvarts
 
             while (true)
             {
+
                 Massages.Title();
 
                 Massages.choise();
@@ -300,6 +301,8 @@ namespace hagvarts
                 {
                     case "s":
                         {
+                            Console.Clear();
+                            Massages.Title();
                             Console.ForegroundColor = ConsoleColor.Cyan;
 
                             Console.WriteLine("enter your name and family : ");
@@ -308,6 +311,8 @@ namespace hagvarts
 
                             string aimName = Console.ReadLine();
                             string aimFamily = Console.ReadLine();
+                            Console.Clear();
+                            Massages.Title();
                             for (i = 0; i < studentNum; i++)
                             {
                                 if (s[i].name == aimName && s[i].family == aimFamily)
@@ -322,14 +327,24 @@ namespace hagvarts
                                 Console.ForegroundColor = ConsoleColor.Cyan;
                                 Console.WriteLine("your letter : ");
                                 Dambeldor.SendLetter(s[temp].name, s[temp].family, s[temp].timeGo, s[temp].cabinNum, s[temp].sitNum);
+                                Console.ForegroundColor = ConsoleColor.Cyan;
+
                                 Console.WriteLine("go to hagvarts(g)");
+
                                 Console.ResetColor();
                                 string go = Console.ReadLine();
                                 DateTime goingtime = new DateTime();
+                                Console.WriteLine("Loading...");
+                                Thread.Sleep(2000);
+                                Console.Clear();
+                                Massages.Title();
+
 
 
                                 if (go == "g")
                                 {
+
+
 
                                     if (DateTime.Now > s[temp].timeGo)
                                     {
@@ -338,6 +353,16 @@ namespace hagvarts
                                     }
                                     else
                                     {
+                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                        Console.WriteLine("Please wait until your group is determined at Hogwarts...");
+
+
+
+
+
+                                        Thread.Sleep(3000);
+                                        Console.Clear();
+                                        Massages.Title();
                                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                                         Console.WriteLine($"Hi {s[temp].name} {s[temp].family} welcome to hagvarts. your group is : {s[temp].Group}");
                                         Massages.studentChoise();
@@ -452,7 +477,7 @@ namespace hagvarts
                                                                     Console.WriteLine("congratulations! you paased this lesson. ");
                                                                     s[temp]._passedUnits[passedunitCounter] = "Sport";
                                                                     passedunitCounter++;
-                                                                    
+
                                                                 }
                                                                 else
                                                                 {
@@ -551,7 +576,8 @@ namespace hagvarts
                                                     }
 
                                                 }
-
+                                                Console.Clear();
+                                                Massages.Title();
                                                 break;
 
 
@@ -569,7 +595,7 @@ namespace hagvarts
                                                     }
                                                     Console.ForegroundColor = ConsoleColor.Cyan;
                                                     Console.WriteLine("select unit :SU");
-                                                    
+
                                                     string unitChoise = Console.ReadLine();
                                                     if (unitChoise == "SU")
                                                     {
@@ -866,13 +892,18 @@ namespace hagvarts
                     case "t":
                         {
 
-
+                            Console.ForegroundColor = ConsoleColor.Cyan;
 
                             Console.WriteLine("enter your name and family : ");
                             bool tchAllow = false;
-
+                            Console.ResetColor();
                             string aimName = Console.ReadLine();
                             string aimFamily = Console.ReadLine();
+                            Console.WriteLine("Loading...");
+                            Thread.Sleep(2000);
+                            Console.Clear();
+                            Massages.Title();
+
                             for (i = 0; i < teacherNum; i++)
                             {
                                 if (t[i].name == aimName && t[i].family == aimFamily)
@@ -889,7 +920,7 @@ namespace hagvarts
                                 {
                                     case "i":
                                         {
-                                            Console.ForegroundColor = ConsoleColor.Yellow;
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.WriteLine($"name : {t[temp].name}");
                                             Thread.Sleep(500);
                                             Console.WriteLine($"family : {t[temp].family}");
@@ -917,20 +948,33 @@ namespace hagvarts
 
                                             Console.ResetColor();
 
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
                                             Console.WriteLine(" if you like to add another lesson write 'yes' else write no");
+                                            Console.ResetColor();
                                             string teacheradd = Console.ReadLine();
-
+                                            Console.WriteLine("Loading...");
+                                            Thread.Sleep(2000);
+                                            Console.Clear();
+                                            Massages.Title();
                                             if (teacheradd == "yes")
                                             {
                                                 if (t[temp].simultaneousTeaching == true)
                                                 {
+                                                    Console.ForegroundColor = ConsoleColor.Cyan;
                                                     Console.WriteLine("write the lesson name : ");
-
+                                                    Console.ResetColor();
                                                     t[temp].Lesson2 = Console.ReadLine();
+                                                    Console.ForegroundColor = ConsoleColor.Cyan;
                                                     Console.WriteLine("write the lesson time : ");
+                                                    Console.ResetColor();
                                                     t[temp].TimeClass2 = Console.ReadLine();
                                                 }
-                                                else { Console.WriteLine("you can't have two lessons"); }
+                                                else
+                                                {
+                                                    Console.ForegroundColor = ConsoleColor.Cyan;
+                                                    Console.WriteLine("you can't have two lessons");
+                                                    Console.ResetColor();
+                                                }
 
                                             }
 
@@ -955,17 +999,27 @@ namespace hagvarts
 
 
                                             }
-                                            Console.WriteLine(t[temp].Lesson1);
-                                            Console.WriteLine(t[temp].TimeClass1);
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                            Console.WriteLine($"Lesson : {t[temp].Lesson1}      Time : {t[temp].TimeClass1}");
+                                            Console.ResetColor();
 
                                             break;
                                         }
                                     case "s":
                                         {
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
                                             Console.WriteLine("Enter the Lesson");
+                                            Console.ResetColor();
                                             string AimLesson = Console.ReadLine();
+                                            Console.WriteLine("Loading...");
+                                            Thread.Sleep(2000);
+                                            Console.Clear();
+                                            Massages.Title();
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+
                                             switch (AimLesson)
                                             {
+
                                                 case "Sport1":
                                                     {
                                                         for (i = 0; i < studentNum; i++)
@@ -1006,55 +1060,76 @@ namespace hagvarts
                                                         }
                                                         break;
                                                     }
+                                                    
 
                                             }
+                                            Console.ResetColor();
                                             break;
                                         }
                                     case "g":
                                         {
+                                            Console.ForegroundColor= ConsoleColor.DarkYellow;
+                                            Console.WriteLine("Loading...");
+                                            Thread.Sleep(2000);
+                                            Console.Clear();
+                                            Massages.Title();
                                             Group huffle = new Group();
+                                            Console.ForegroundColor= ConsoleColor.Cyan;
                                             Console.WriteLine("choose one : \n Hufflepuff       Gryffindor      Slytherin       Ravenclaw");
+                                            Console.ResetColor();
                                             string GroupName = Console.ReadLine();
                                             switch (GroupName)
                                             {
                                                 case "Hufflepuff":
                                                     {
+                                                        Console.ForegroundColor= ConsoleColor.Cyan;
                                                         Console.WriteLine("the list of Hufflepuff is : ");
 
                                                         for (i = 0; i < studentNum; i++)
                                                         {
+                                                            Console.ForegroundColor= ConsoleColor.DarkGreen;
                                                             if (group[i].type == "Hufflepuff")
                                                             {
                                                                 Console.WriteLine(group[i].name + " " + group[i].family);
 
                                                             }
                                                         }
+                                                        Console.ResetColor();
 
                                                         break;
                                                     }
                                                 case "Gryffindor":
                                                     {
+                                                        Console.ForegroundColor = ConsoleColor.Cyan;
+
                                                         Console.WriteLine("the list of Gryffindor is : ");
 
                                                         for (i = 0; i < studentNum; i++)
                                                         {
+                                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+
                                                             if (group[i].type == "Gryffindor")
                                                             {
                                                                 Console.WriteLine(group[i].name + " " + group[i].family);
 
                                                             }
                                                         }
+                                                        Console.ResetColor();
 
                                                         break;
                                                     }
                                                 case "Ravenclaw":
                                                     {
+                                                        Console.ForegroundColor = ConsoleColor.Cyan;
+
                                                         Console.WriteLine("the list of Ravenclaw is : ");
 
                                                         for (i = 0; i < studentNum; i++)
                                                         {
                                                             if (group[i].type == "Ravenclaw")
                                                             {
+                                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+
                                                                 Console.WriteLine(group[i].name + " " + group[i].family);
 
 
@@ -1065,14 +1140,18 @@ namespace hagvarts
                                                     }
                                                 case "Slytherin":
                                                     {
+                                                        Console.ForegroundColor= ConsoleColor.Cyan;
                                                         Console.WriteLine("the list of Slytherin is : ");
                                                         for (i = 0; i < studentNum; i++)
                                                         {
                                                             if (group[i].type == "Slytherin")
                                                             {
+                                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+
                                                                 Console.WriteLine(group[i].name + " " + group[i].family);
 
                                                             }
+                                                            Console.ResetColor() ;
                                                         }
                                                         break;
                                                     }
@@ -1097,41 +1176,99 @@ namespace hagvarts
                             Thread.Sleep(2000);
                             Massages.dambeldorChoise();
                             string dambeldorChoose = Console.ReadLine();
+
                             switch (dambeldorChoose)
                             {
 
                                 case "s":
                                     {
+                                        Console.ForegroundColor = ConsoleColor.Cyan;
+                                        Console.WriteLine("Send letter to all students(sendall)         send letter to one person(sendone)");
+                                        Console.ResetColor();
+                                        string sendletter = Console.ReadLine();
                                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                                         Console.WriteLine("Loading...");
                                         Thread.Sleep(2000);
-                                        Console.ResetColor();
-
-                                        Console.ForegroundColor = ConsoleColor.Cyan;
-                                        //for (i = 0; i < 300; i++)
-                                        //{
-                                        Console.WriteLine("write the people index number : ");
-                                        Console.ResetColor();
-                                        int q = int.Parse(Console.ReadLine());
+                                        Console.Clear();
+                                        Massages.Title();
 
 
+                                        if (sendletter == "sendall")
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                            Console.WriteLine("Loading...");
+                                            Thread.Sleep(2000);
+                                            Console.ResetColor();
+                                            Console.Clear();
+                                            Massages.Title();
 
-
-                                        Random random = new Random();
-                                        DateTime[] myDateTime = new DateTime[100];
-
-                                        myDateTime[q - 1] = new DateTime(2023, DateTime.Now.Month, random.Next(15, 31), random.Next(0, 24), random.Next(0, 60), 0);
-                                        s[q - 1].timeGo = myDateTime[q - 1];
-                                        s[q - 1].cabinNum = random.Next(1, 55);
-                                        s[q - 1].sitNum = random.Next(1, 4);
-                                        Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                        Console.WriteLine("Hi. You are allowed to come to hagvarts:)");
-                                        Console.ResetColor();
-                                        Dambeldor.SendLetter(s[q - 1].name, s[q - 1].family, s[q - 1].timeGo, s[q - 1].cabinNum, s[q - 1].sitNum);
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                            //for (i = 0; i < 300; i++)
+                                            //{
+                                            //Console.WriteLine("write the people index number : ");
+                                            Console.ResetColor();
+                                            //int q = int.Parse(Console.ReadLine());
 
 
 
-                                        //}
+
+                                            Random random = new Random();
+                                            DateTime[] myDateTime = new DateTime[230];
+                                            Console.WriteLine("Sending letter so students...");
+                                            Thread.Sleep(5000);
+
+
+                                            Console.Clear();
+                                            Massages.Title();
+                                            for (i = 1; i <= studentNum; i++)
+                                            {
+                                                myDateTime[i - 1] = new DateTime(2023, DateTime.Now.Month, random.Next(15, 31), random.Next(0, 24), random.Next(0, 60), 0);
+                                                s[i - 1].timeGo = myDateTime[i - 1];
+                                                s[i - 1].cabinNum = random.Next(1, 55);
+                                                s[i - 1].sitNum = random.Next(1, 4);
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Hi. You are allowed to come to hagvarts:)");
+                                                Console.ResetColor();
+                                                Dambeldor.SendLetter(s[i - 1].name, s[i - 1].family, s[i - 1].timeGo, s[i - 1].cabinNum, s[i - 1].sitNum);
+
+                                            }
+                                            Console.Clear();
+
+
+                                        }
+                                        if (sendletter == "sendone")
+                                        {
+
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                            Console.WriteLine("write index of someone to send letter :");
+                                            Console.ResetColor();
+                                            int q = int.Parse(Console.ReadLine());
+                                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                            Console.WriteLine("Loading...");
+                                            Console.ResetColor();
+                                            Thread.Sleep(2000);
+                                            Console.Clear();
+                                            Massages.Title();
+                                            Random random = new Random();
+                                            DateTime[] myDateTime = new DateTime[230];
+                                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                            Console.WriteLine("Sending letter so student...");
+                                            Console.ResetColor();
+                                            Thread.Sleep(5000);
+
+                                            myDateTime[q - 1] = new DateTime(2023, DateTime.Now.Month, random.Next(15, 31), random.Next(0, 24), random.Next(0, 60), 0);
+                                            s[q - 1].timeGo = myDateTime[q - 1];
+                                            s[q - 1].cabinNum = random.Next(1, 55);
+                                            s[q - 1].sitNum = random.Next(1, 4);
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+
+                                            Console.WriteLine($"Hi {s[temp].name} {s[temp].family} . You are allowed to come to hagvarts:)");
+                                            Console.ResetColor();
+                                            Dambeldor.SendLetter(s[q - 1].name, s[q - 1].family, s[q - 1].timeGo, s[q - 1].cabinNum, s[q - 1].sitNum);
+
+
+                                        }
+
                                         break;
                                     }
                                 case "l":
@@ -1140,6 +1277,8 @@ namespace hagvarts
                                         Console.WriteLine("Loading...");
                                         Thread.Sleep(2000);
                                         Console.ResetColor();
+                                        Console.Clear();
+                                        Massages.Title();
                                         for (i = 0; i < studentNum; i++)
                                         {
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -1148,7 +1287,8 @@ namespace hagvarts
 
                                         }
 
-
+                                        Console.Clear();
+                                        Massages.Title();
 
                                         break;
                                     }
@@ -1158,6 +1298,8 @@ namespace hagvarts
                                         Console.WriteLine("Loading...");
                                         Thread.Sleep(2000);
                                         Console.ResetColor();
+                                        Console.Clear();
+                                        Massages.Title();
                                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                                         if (dambeldorinbox == 0)
                                         {
@@ -1198,10 +1340,13 @@ namespace hagvarts
                                         }
 
 
-
+                                        Console.Clear();
+                                        Massages.Title();
                                         break;
                                     }
                             }
+                            //Console.Clear();
+                            //Massages.Title();
                             break;
                         }
 
@@ -1210,7 +1355,7 @@ namespace hagvarts
 
                 }
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("do you want do continue ? press 'y'");
+                Console.WriteLine("press any key to continue...");
                 Console.ResetColor();
                 string permission = Console.ReadLine();
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
