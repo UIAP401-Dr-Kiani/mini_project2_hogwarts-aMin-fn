@@ -46,9 +46,9 @@ namespace hagvarts
             //    case Pet.rat:
             //        break;
             //}
-            var list3 = new List<string> { "cat","rat","owl"};
+            var list3 = new List<string> { "cat", "rat", "owl" };
 
-            
+
             Random petr = new Random();
             for (i = 0; i < humanNum.Length - 1; i++)
             {
@@ -70,7 +70,7 @@ namespace hagvarts
                 j++;
                 h[i].password = Human[j];
                 j++;
-                
+
 
                 //h[i].pet = Enum.Parse(,list3[petr.Next(0, 2)], true);
 
@@ -310,7 +310,7 @@ namespace hagvarts
                 lesson[i] = new Lesson();
             }
 
-
+            bool goHagvarts = false;
 
 
 
@@ -325,6 +325,8 @@ namespace hagvarts
                 Massages.loading();
                 //Thread.Sleep(1000);
                 Console.ResetColor();
+                Console.Clear();
+                Massages.Title();
 
                 switch (Choise)
                 {
@@ -350,8 +352,12 @@ namespace hagvarts
                                     temp = i;
                                 }
                             }
+
                             if (stuAllow)
                             {
+                                
+                                
+
 
                                 Console.ForegroundColor = ConsoleColor.Cyan;
                                 Console.WriteLine("your letter : ");
@@ -379,8 +385,9 @@ namespace hagvarts
                                         Console.ForegroundColor = ConsoleColor.Red;
                                         Console.WriteLine("you can't go right now because The time to go has passed");
                                     }
-                                    else
-                                    {
+                                   
+                                    
+                                        goHagvarts = true;
                                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                                         Console.WriteLine("Please wait until your group is determined at Hogwarts...");
 
@@ -393,6 +400,7 @@ namespace hagvarts
                                         Massages.Title();
                                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                                         Console.WriteLine($"Hi {s[temp].name} {s[temp].family} welcome to hagvarts. your group is : {s[temp].Group}");
+                                       
                                         Massages.studentChoise();
                                         Console.ResetColor();
                                         string stuChoise = Console.ReadLine();
@@ -699,6 +707,7 @@ namespace hagvarts
                                                 Console.WriteLine(" You are allowed to come to hagvarts.");
                                                 Thread.Sleep(500);
                                                 Console.ResetColor();
+                                            Console.ForegroundColor= ConsoleColor.DarkGreen;
                                                 Dambeldor.SendLetter(s[temp].name, s[temp].family, s[temp].timeGo, s[temp].cabinNum, s[temp].sitNum);
                                                 break;
                                             case "sd":
@@ -895,7 +904,7 @@ namespace hagvarts
 
 
 
-                                        }
+                                        
 
 
 
@@ -1198,20 +1207,23 @@ namespace hagvarts
                             //Thread.Sleep(2000);
                             Massages.dambeldorChoise();
                             string dambeldorChoose = Console.ReadLine();
+                            Massages.loading();
+                            Console.Clear();
+                            Massages.Title();
+
 
                             switch (dambeldorChoose)
                             {
 
                                 case "s":
                                     {
-                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                        Massages.loading();
+                                        Console.ForegroundColor = ConsoleColor.Cyan;
                                         Console.WriteLine("Send letter to all students(sendall)         send letter to one person(sendone)");
                                         Console.ResetColor();
                                         string sendletter = Console.ReadLine();
                                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                                         Massages.loading();
-                                        
+
                                         Console.Clear();
                                         Massages.Title();
 
@@ -1251,7 +1263,7 @@ namespace hagvarts
                                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                                                 Console.WriteLine("Hi. You are allowed to come to hagvarts:)");
                                                 Dambeldor.SendLetter(s[i - 1].name, s[i - 1].family, s[i - 1].timeGo, s[i - 1].cabinNum, s[i - 1].sitNum);
-                                               
+
 
                                             }
                                             Console.ResetColor();
@@ -1307,7 +1319,7 @@ namespace hagvarts
                                             Console.ResetColor();
 
                                         }
-                                        
+
                                         //Console.Clear();
                                         //Massages.Title();
 

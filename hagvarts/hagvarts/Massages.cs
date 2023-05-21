@@ -11,6 +11,7 @@ namespace hagvarts
     {
         public static void loading()
         {
+            Console.ForegroundColor= ConsoleColor.DarkYellow;
             string load = "Loading...";
             for (int i = 0; i < load.Length; i++)
             {
