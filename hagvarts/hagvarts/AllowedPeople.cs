@@ -11,6 +11,7 @@ namespace hagvarts
         rat,
         cat,
         owl,
+        
     };
     public enum Role
     {

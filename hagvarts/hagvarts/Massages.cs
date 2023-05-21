@@ -9,6 +9,17 @@ namespace hagvarts
 {
     public class Massages : human
     {
+        public static void loading()
+        {
+            string load = "Loading...";
+            for (int i = 0; i < load.Length; i++)
+            {
+                Console.Write(load[i]);
+                Thread.Sleep(200);
+                
+            }
+            Console.WriteLine();
+        }
         public static void Title()
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
