@@ -355,563 +355,568 @@ namespace hagvarts
 
                             if (stuAllow)
                             {
-                                
-                                
-
-
                                 Console.ForegroundColor = ConsoleColor.Cyan;
-                                Console.WriteLine("your letter : ");
-                                Dambeldor.SendLetter(s[temp].name, s[temp].family, s[temp].timeGo, s[temp].cabinNum, s[temp].sitNum);
-                                Console.ForegroundColor = ConsoleColor.Cyan;
-
-                                Console.WriteLine("go to hagvarts(g)");
-
-                                Console.ResetColor();
-                                string go = Console.ReadLine();
-                                DateTime goingtime = new DateTime();
-                                Massages.loading();
-                                Console.Clear();
-                                Massages.Title();
-
-
-
-                                if (go == "g")
+                                if (!s[temp].isGoToHagowartz)
                                 {
+                                    Console.WriteLine("your letter : ");
 
-
-
+                                    Dambeldor.SendLetter(s[temp].name, s[temp].family, s[temp].timeGo, s[temp].cabinNum, s[temp].sitNum);
+                                    Thread.Sleep(1000);
                                     if (DateTime.Now > s[temp].timeGo)
                                     {
                                         Console.ForegroundColor = ConsoleColor.Red;
                                         Console.WriteLine("you can't go right now because The time to go has passed");
                                     }
-                                   
-                                    
-                                        goHagvarts = true;
-                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                        Console.WriteLine("Please wait until your group is determined at Hogwarts...");
 
 
+                                    goHagvarts = true;
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine("Please wait until your group is determined at Hogwarts...");
+
+                                    Thread.Sleep(3000);
+                                    Console.Clear();
+                                    Massages.Title();
+                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                    Console.WriteLine($"Hi {s[temp].name} {s[temp].family} welcome to hagvarts. your group is : {s[temp].Group}");
+                                    s[temp].isGoToHagowartz = true;
+                                    Console.ForegroundColor = ConsoleColor.Cyan;
+
+                                    Console.WriteLine("go to hagvarts(g)");
+
+                                    Console.ResetColor();
+                                    string go = Console.ReadLine();
+                                    DateTime goingtime = new DateTime();
+                                    Massages.loading();
+                                    Console.Clear();
+                                    Massages.Title();
+                                    if (go != "g")
+                                    {
+                                        Console.WriteLine("Wrong input!");
+                                        break;
 
 
+                                        //if (DateTime.Now > s[temp].timeGo)
+                                        //{
+                                        //    Console.ForegroundColor = ConsoleColor.Red;
+                                        //    Console.WriteLine("you can't go right now because The time to go has passed");
+                                        //}
 
-                                        Thread.Sleep(3000);
-                                        Console.Clear();
-                                        Massages.Title();
+
+                                        //goHagvarts = true;
+                                        //Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                        //Console.WriteLine("Please wait until your group is determined at Hogwarts...");
+
+
+                                        //Thread.Sleep(3000);
+                                        //Console.Clear();
+                                        //Massages.Title();
+                                        //Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                        //Console.WriteLine($"Hi {s[temp].name} {s[temp].family} welcome to hagvarts. your group is : {s[temp].Group}");
+
+                                        
+                                    }
+
+                                }
+                                Massages.studentChoise();
+                                Console.ResetColor();
+                                string stuChoise = Console.ReadLine();
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                Massages.loading();
+                                Console.ResetColor();
+                                switch (stuChoise)
+                                {
+                                    case "i":
+
                                         Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                        Console.WriteLine($"Hi {s[temp].name} {s[temp].family} welcome to hagvarts. your group is : {s[temp].Group}");
-                                       
-                                        Massages.studentChoise();
+
+                                        Console.WriteLine($"name : {s[temp].name}");
+                                        Thread.Sleep(500);
+                                        Console.WriteLine($"family : {s[temp].family}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"dateOfBirth : {s[temp].dateOfBirth}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"gender : {s[temp].gender}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"father : {s[temp].father}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"username : {s[temp].username}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"password : {s[temp].password}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"raceType : {s[temp].racetype}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"role : student");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"group : {s[temp].Group}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"haveing luggage : {s[temp].Luggage}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"pet : {s[temp].pet}");
+                                        Thread.Sleep(500);
+
+                                        Console.WriteLine($"dorm => floor : {s[temp]._floornum} room : {s[temp]._roomnum} bed : {s[temp]._bednum} ");
+                                        Thread.Sleep(500);
                                         Console.ResetColor();
-                                        string stuChoise = Console.ReadLine();
-                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                        Massages.loading();
+                                        Console.ForegroundColor = ConsoleColor.Cyan;
+
+                                        Console.WriteLine("list of lessons(ll)");
                                         Console.ResetColor();
-                                        switch (stuChoise)
+                                        string ll = Console.ReadLine();
+                                        if (ll == "ll")
                                         {
-                                            case "i":
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                            Random randomdayofweek = new Random();
+                                            var list2 = new List<string> { "satarday", "sunday", "monday", "tuesday", "thursday" };
+                                            int index2 = randomdayofweek.Next(list2.Count);
 
-                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                            Console.WriteLine($"Sport1     |:teacher :  {t[r3.Next(0, 80)].family} |time => day : {list2[randomdayofweek.Next(list2.Count)]}    |hour : {randomdayofweek.Next(1, 24)} ");
+                                            Console.WriteLine("-----------------------------------------------------------------------------------");
+                                            Thread.Sleep(1000);
+                                            Console.WriteLine($"Literature |:teacher : {t[r3.Next(0, 80)].family}  |time : => day : {list2[randomdayofweek.Next(list2.Count)]}  |hour : {randomdayofweek.Next(1, 24)} ");
+                                            Console.WriteLine("-----------------------------------------------------------------------------------");
+                                            Thread.Sleep(1000);
+                                            Console.WriteLine($"Botancial  |:teacher : {t[r3.Next(0, 80)].family}  |time : => day : {list2[randomdayofweek.Next(list2.Count)]}  |hour : {randomdayofweek.Next(1, 24)} ");
+                                            Console.WriteLine("-----------------------------------------------------------------------------------");
+                                            Thread.Sleep(1000);
+                                            Console.WriteLine($"Math1      |:teacher : {t[r3.Next(0, 80)].family}  |time :  => day : {list2[randomdayofweek.Next(list2.Count)]} |hour : {randomdayofweek.Next(1, 24)} ");
+                                            Console.WriteLine("-----------------------------------------------------------------------------------");
+                                            Thread.Sleep(1000);
+                                            Console.WriteLine($"Physics1   |:teacher : {t[r3.Next(0, 80)].family}  |time :  => day : {list2[randomdayofweek.Next(list2.Count)]} |hour : {randomdayofweek.Next(1, 24)} ");
+                                            Console.WriteLine("-----------------------------------------------------------------------------------");
+                                            Thread.Sleep(1000);
 
-                                                Console.WriteLine($"name : {s[temp].name}");
-                                                Thread.Sleep(500);
-                                                Console.WriteLine($"family : {s[temp].family}");
-                                                Thread.Sleep(500);
+                                            for (i = 0; i < lessoncounter; i++)
+                                            {
+                                                Console.WriteLine($"{lesson[temp].nameL[i]} : time => day : {lesson[temp].DayL[i]} hour : {lesson[temp].hourtime[i]}");
+                                                Thread.Sleep(1000);
+                                            }
+                                            Console.ResetColor();
+                                            //List<Lesson> term1Lessonsex = LessonMg.Term1Lessons();
+                                            //for (i = 0; i < term1Lessonsex.Count; i++)
+                                            //{
+                                            //    Console.WriteLine(term1Lessonsex[i].nameL + "  " + term1Lessonsex[i].timeL);
+                                            //}
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
 
-                                                Console.WriteLine($"dateOfBirth : {s[temp].dateOfBirth}");
-                                                Thread.Sleep(500);
-
-                                                Console.WriteLine($"gender : {s[temp].gender}");
-                                                Thread.Sleep(500);
-
-                                                Console.WriteLine($"father : {s[temp].father}");
-                                                Thread.Sleep(500);
-
-                                                Console.WriteLine($"username : {s[temp].username}");
-                                                Thread.Sleep(500);
-
-                                                Console.WriteLine($"password : {s[temp].password}");
-                                                Thread.Sleep(500);
-
-                                                Console.WriteLine($"raceType : {s[temp].racetype}");
-                                                Thread.Sleep(500);
-
-                                                Console.WriteLine($"role : student");
-                                                Thread.Sleep(500);
-
-                                                Console.WriteLine($"group : {s[temp].Group}");
-                                                Thread.Sleep(500);
-
-                                                Console.WriteLine($"haveing luggage : {s[temp].Luggage}");
-                                                Thread.Sleep(500);
-
-                                                Console.WriteLine($"pet : {s[temp].pet}");
-                                                Thread.Sleep(500);
-
-                                                Console.WriteLine($"dorm => floor : {s[temp]._floornum} room : {s[temp]._roomnum} bed : {s[temp]._bednum} ");
-                                                Thread.Sleep(500);
-                                                Console.ResetColor();
-                                                Console.ForegroundColor = ConsoleColor.Cyan;
-
-                                                Console.WriteLine("list of lessons(ll)");
-                                                Console.ResetColor();
-                                                string ll = Console.ReadLine();
-                                                if (ll == "ll")
-                                                {
-                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                    Random randomdayofweek = new Random();
-                                                    var list2 = new List<string> { "satarday", "sunday", "monday", "tuesday", "thursday" };
-                                                    int index2 = randomdayofweek.Next(list2.Count);
-
-                                                    Console.WriteLine($"Sport1     |:teacher :  {t[r3.Next(0, 80)].family} |time => day : {list2[randomdayofweek.Next(list2.Count)]}    |hour : {randomdayofweek.Next(1, 24)} ");
-                                                    Console.WriteLine("-----------------------------------------------------------------------------------");
-                                                    Thread.Sleep(1000);
-                                                    Console.WriteLine($"Literature |:teacher : {t[r3.Next(0, 80)].family}  |time : => day : {list2[randomdayofweek.Next(list2.Count)]}  |hour : {randomdayofweek.Next(1, 24)} ");
-                                                    Console.WriteLine("-----------------------------------------------------------------------------------");
-                                                    Thread.Sleep(1000);
-                                                    Console.WriteLine($"Botancial  |:teacher : {t[r3.Next(0, 80)].family}  |time : => day : {list2[randomdayofweek.Next(list2.Count)]}  |hour : {randomdayofweek.Next(1, 24)} ");
-                                                    Console.WriteLine("-----------------------------------------------------------------------------------");
-                                                    Thread.Sleep(1000);
-                                                    Console.WriteLine($"Math1      |:teacher : {t[r3.Next(0, 80)].family}  |time :  => day : {list2[randomdayofweek.Next(list2.Count)]} |hour : {randomdayofweek.Next(1, 24)} ");
-                                                    Console.WriteLine("-----------------------------------------------------------------------------------");
-                                                    Thread.Sleep(1000);
-                                                    Console.WriteLine($"Physics1   |:teacher : {t[r3.Next(0, 80)].family}  |time :  => day : {list2[randomdayofweek.Next(list2.Count)]} |hour : {randomdayofweek.Next(1, 24)} ");
-                                                    Console.WriteLine("-----------------------------------------------------------------------------------");
-                                                    Thread.Sleep(1000);
-
-                                                    for (i = 0; i < lessoncounter; i++)
+                                            Console.WriteLine("choose a lesson that  you want to take a test : ");
+                                            Console.ResetColor();
+                                            string aimlesson = Console.ReadLine();
+                                            Random randomScore = new Random();
+                                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                            Massages.loading();
+                                            Console.ResetColor();
+                                            switch (aimlesson)
+                                            {
+                                                case "Sport1":
                                                     {
-                                                        Console.WriteLine($"{lesson[temp].nameL[i]} : time => day : {lesson[temp].DayL[i]} hour : {lesson[temp].hourtime[i]}");
-                                                        Thread.Sleep(1000);
-                                                    }
-                                                    Console.ResetColor();
-                                                    //List<Lesson> term1Lessonsex = LessonMg.Term1Lessons();
-                                                    //for (i = 0; i < term1Lessonsex.Count; i++)
-                                                    //{
-                                                    //    Console.WriteLine(term1Lessonsex[i].nameL + "  " + term1Lessonsex[i].timeL);
-                                                    //}
-                                                    Console.ForegroundColor = ConsoleColor.Cyan;
 
-                                                    Console.WriteLine("choose a lesson that  you want to take a test : ");
-                                                    Console.ResetColor();
-                                                    string aimlesson = Console.ReadLine();
-                                                    Random randomScore = new Random();
-                                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                                    Massages.loading();
-                                                    Console.ResetColor();
-                                                    switch (aimlesson)
-                                                    {
-                                                        case "Sport1":
-                                                            {
-
-                                                                s[temp].Sport1Score = randomScore.Next(5, 20);
-                                                                if (s[temp].Sport1Score > 10)
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                                    Console.WriteLine("congratulations! you paased this lesson. ");
-                                                                    s[temp]._passedUnits[passedunitCounter] = "Sport";
-                                                                    passedunitCounter++;
-
-                                                                }
-                                                                else
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.Red;
-                                                                    Console.WriteLine("you failed! because you didn't get the enough score to pass this lesson. ");
-                                                                    s[temp]._failedUnits[failedunitcounter] = "Sport1";
-                                                                    failedunitcounter++;
-                                                                }
-                                                                Console.ResetColor();
-                                                                break;
-                                                            }
-                                                        case "Literature":
-                                                            {
-
-                                                                s[temp].LiteratureScore = randomScore.Next(5, 20);
-                                                                if (s[temp].LiteratureScore > 10)
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                                    Console.WriteLine("congratulations! you paased this lesson. ");
-                                                                    s[temp]._passedUnits[passedunitCounter] = "Literature";
-                                                                    passedunitCounter++;
-                                                                }
-                                                                else
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.Red;
-                                                                    Console.WriteLine("you failed! because you didn't get the enough score to pass this lesson. ");
-                                                                    s[temp]._failedUnits[failedunitcounter] = "Literature";
-                                                                    failedunitcounter++;
-                                                                }
-                                                                Console.ResetColor();
-                                                                break;
-                                                            }
-                                                        case "Botancial":
-                                                            {
-                                                                int scoreBotancial = randomScore.Next(5, 20);
-                                                                if (scoreBotancial > 10)
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                                    Console.WriteLine("congratulations! you paased this lesson. ");
-                                                                    s[temp]._passedUnits[passedunitCounter] = "Botancial";
-                                                                    passedunitCounter++;
-                                                                }
-                                                                else
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.Red;
-                                                                    Console.WriteLine("you failed! because you didn't get the enough score to pass this lesson. ");
-                                                                    s[temp]._failedUnits[failedunitcounter] = "Botancial";
-                                                                    failedunitcounter++;
-                                                                }
-                                                                Console.ResetColor();
-                                                                break;
-                                                            }
-                                                        case "Math1":
-                                                            {
-                                                                s[temp].Math1Score = randomScore.Next(5, 20);
-                                                                if (s[temp].Math1Score > 10)
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                                    Console.WriteLine("congratulations! you paased this lesson. ");
-                                                                    s[temp]._passedUnits[passedunitCounter] = "Math1";
-                                                                    passedunitCounter++;
-                                                                }
-                                                                else
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.Red;
-                                                                    Console.WriteLine("you failed! because you didn't get the enough score to pass this lesson. ");
-                                                                    s[temp]._failedUnits[failedunitcounter] = "Math1";
-                                                                    failedunitcounter++;
-                                                                }
-                                                                Console.ResetColor();
-                                                                break;
-                                                            }
-                                                        case "Physics1":
-                                                            {
-                                                                s[temp].Physics1Score = randomScore.Next(5, 20);
-                                                                if (s[temp].Physics1Score > 10)
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                                    Console.WriteLine("congratulations! you paased this lesson. ");
-                                                                    s[temp]._passedUnits[passedunitCounter] = "Physics1";
-                                                                    passedunitCounter++;
-                                                                }
-                                                                else
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.Red;
-                                                                    Console.WriteLine("you failed! because you didn't get the enough score to pass this lesson. ");
-                                                                    s[temp]._failedUnits[failedunitcounter] = "Physics1";
-                                                                    failedunitcounter++;
-                                                                }
-                                                                Console.ResetColor();
-                                                                break;
-                                                            }
-
-                                                        default:
-                                                            break;
-                                                    }
-
-                                                }
-                                                Console.Clear();
-                                                Massages.Title();
-                                                break;
-
-
-                                            case "p":
-
-                                                {
-                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                    Console.WriteLine("List of passed lessons : ");
-                                                    for (i = 0; i < s[temp]._passedUnits.Length; i++)
-                                                    {
-                                                        if (s[temp]._passedUnits[i] == null)
-                                                            break;
-                                                        Console.WriteLine(s[temp]._passedUnits[i]);
-                                                        Thread.Sleep(500);
-                                                    }
-                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-                                                    Console.WriteLine("select unit :SU");
-
-                                                    string unitChoise = Console.ReadLine();
-                                                    if (unitChoise == "SU")
-                                                    {
-                                                        if (lessoncounter == 1)
+                                                        s[temp].Sport1Score = randomScore.Next(5, 20);
+                                                        if (s[temp].Sport1Score > 10)
                                                         {
-                                                            Console.ForegroundColor = ConsoleColor.Cyan;
-                                                            Console.WriteLine("you can select unit :");
-                                                            Console.WriteLine("units : ");
                                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                            Console.WriteLine($"Sport2       Math2       Physics2        Chemistry       Occultism      ");
-                                                            for (i = 0; i < failedunitcounter; i++)
-                                                            {
+                                                            Console.WriteLine("congratulations! you paased this lesson. ");
+                                                            s[temp]._passedUnits[passedunitCounter] = "Sport";
+                                                            passedunitCounter++;
 
-                                                                Console.WriteLine(s[temp]._failedUnits[i]);
-                                                            }
-                                                            Console.ForegroundColor = ConsoleColor.Cyan;
-                                                            Console.WriteLine("select lessons that you want to choose(you can maximum choose 5 lesson) :");
-
-                                                            string ask = "yes";
-
-
-                                                            while (ask == "yes")
-                                                            {
-
-                                                                Random randomdayofweek = new Random();
-
-                                                                var list2 = new List<string> { "satarday", "sunday", "monday", "tuesday", "thursday" };
-
-
-                                                                Student[] lessons = new Student[20];
-                                                                lessons[lessoncounter] = new Student(lesson[temp], lessoncounter);
-                                                                lessoncounter++;
-                                                                //lesson[temp].nameL[lessoncounter] = Console.ReadLine();
-                                                                //lesson[temp].DayL[lessoncounter] = list2[randomdayofweek.Next(list2.Count)];
-                                                                //lesson[temp].hourtime[lessoncounter] = Convert.ToString(randomdayofweek.Next(1, 24));
-                                                                Console.WriteLine("if you want to continue choosing press yes");
-                                                                ask = Console.ReadLine();
-                                                            }
                                                         }
-
                                                         else
                                                         {
                                                             Console.ForegroundColor = ConsoleColor.Red;
-                                                            Console.WriteLine("you can't select unit because you hasn't passed the previous lessons !");
-
-                                                            Console.ResetColor();
+                                                            Console.WriteLine("you failed! because you didn't get the enough score to pass this lesson. ");
+                                                            s[temp]._failedUnits[failedunitcounter] = "Sport1";
+                                                            failedunitcounter++;
                                                         }
-
-
-
+                                                        Console.ResetColor();
+                                                        break;
                                                     }
-
-
-
-                                                    break;
-                                                }
-                                            //case "s":
-
-                                            //    break;
-
-
-                                            case "d":
-
-                                                {
-                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-
-                                                    Console.WriteLine($"floor : {s[temp]._floornum}  room : {s[temp]._roomnum}  bed : {s[temp]._bednum} ");
-
-                                                }
-                                                break;
-                                            case "l":
-                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                Console.WriteLine("last letter : ");
-                                                Thread.Sleep(500);
-                                                Console.WriteLine(" You are allowed to come to hagvarts.");
-                                                Thread.Sleep(500);
-                                                Console.ResetColor();
-                                            Console.ForegroundColor= ConsoleColor.DarkGreen;
-                                                Dambeldor.SendLetter(s[temp].name, s[temp].family, s[temp].timeGo, s[temp].cabinNum, s[temp].sitNum);
-                                                break;
-                                            case "sd":
-                                                {
-                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-                                                    Console.WriteLine("enter your name : ");
-                                                    Console.ResetColor();
-                                                    string aimStuName = Console.ReadLine();
-                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-
-                                                    Console.WriteLine("enter your family : ");
-                                                    Console.ResetColor();
-
-                                                    string aimStuFamily = Console.ReadLine();
-                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-
-                                                    Console.WriteLine("write your letter : ");
-                                                    Console.ResetColor();
-
-                                                    string stuLetter = Console.ReadLine();
-
-                                                    for (i = 0; i < studentNum; i++)
+                                                case "Literature":
                                                     {
-                                                        if (s[i].name == aimStuName && s[i].family == aimStuFamily)
+
+                                                        s[temp].LiteratureScore = randomScore.Next(5, 20);
+                                                        if (s[temp].LiteratureScore > 10)
                                                         {
+                                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                            Console.WriteLine("congratulations! you paased this lesson. ");
+                                                            s[temp]._passedUnits[passedunitCounter] = "Literature";
+                                                            passedunitCounter++;
+                                                        }
+                                                        else
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.Red;
+                                                            Console.WriteLine("you failed! because you didn't get the enough score to pass this lesson. ");
+                                                            s[temp]._failedUnits[failedunitcounter] = "Literature";
+                                                            failedunitcounter++;
+                                                        }
+                                                        Console.ResetColor();
+                                                        break;
+                                                    }
+                                                case "Botancial":
+                                                    {
+                                                        int scoreBotancial = randomScore.Next(5, 20);
+                                                        if (scoreBotancial > 10)
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                            Console.WriteLine("congratulations! you paased this lesson. ");
+                                                            s[temp]._passedUnits[passedunitCounter] = "Botancial";
+                                                            passedunitCounter++;
+                                                        }
+                                                        else
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.Red;
+                                                            Console.WriteLine("you failed! because you didn't get the enough score to pass this lesson. ");
+                                                            s[temp]._failedUnits[failedunitcounter] = "Botancial";
+                                                            failedunitcounter++;
+                                                        }
+                                                        Console.ResetColor();
+                                                        break;
+                                                    }
+                                                case "Math1":
+                                                    {
+                                                        s[temp].Math1Score = randomScore.Next(5, 20);
+                                                        if (s[temp].Math1Score > 10)
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                            Console.WriteLine("congratulations! you paased this lesson. ");
+                                                            s[temp]._passedUnits[passedunitCounter] = "Math1";
+                                                            passedunitCounter++;
+                                                        }
+                                                        else
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.Red;
+                                                            Console.WriteLine("you failed! because you didn't get the enough score to pass this lesson. ");
+                                                            s[temp]._failedUnits[failedunitcounter] = "Math1";
+                                                            failedunitcounter++;
+                                                        }
+                                                        Console.ResetColor();
+                                                        break;
+                                                    }
+                                                case "Physics1":
+                                                    {
+                                                        s[temp].Physics1Score = randomScore.Next(5, 20);
+                                                        if (s[temp].Physics1Score > 10)
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                            Console.WriteLine("congratulations! you paased this lesson. ");
+                                                            s[temp]._passedUnits[passedunitCounter] = "Physics1";
+                                                            passedunitCounter++;
+                                                        }
+                                                        else
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.Red;
+                                                            Console.WriteLine("you failed! because you didn't get the enough score to pass this lesson. ");
+                                                            s[temp]._failedUnits[failedunitcounter] = "Physics1";
+                                                            failedunitcounter++;
+                                                        }
+                                                        Console.ResetColor();
+                                                        break;
+                                                    }
+
+                                                default:
+                                                    break;
+                                            }
+
+                                        }
+                                        Console.Clear();
+                                        Massages.Title();
+                                        break;
+
+
+                                    case "p":
+
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                            Console.WriteLine("List of passed lessons : ");
+                                            for (i = 0; i < s[temp]._passedUnits.Length; i++)
+                                            {
+                                                if (s[temp]._passedUnits[i] == null)
+                                                    break;
+                                                Console.WriteLine(s[temp]._passedUnits[i]);
+                                                Thread.Sleep(500);
+                                            }
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                            Console.WriteLine("select unit :SU");
+
+                                            string unitChoise = Console.ReadLine();
+                                            if (unitChoise == "SU")
+                                            {
+                                                if (lessoncounter == 1)
+                                                {
+                                                    Console.ForegroundColor = ConsoleColor.Cyan;
+                                                    Console.WriteLine("you can select unit :");
+                                                    Console.WriteLine("units : ");
+                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                    Console.WriteLine($"Sport2       Math2       Physics2        Chemistry       Occultism      ");
+                                                    for (i = 0; i < failedunitcounter; i++)
+                                                    {
+
+                                                        Console.WriteLine(s[temp]._failedUnits[i]);
+                                                    }
+                                                    Console.ForegroundColor = ConsoleColor.Cyan;
+                                                    Console.WriteLine("select lessons that you want to choose(you can maximum choose 5 lesson) :");
+
+                                                    string ask = "yes";
+
+
+                                                    while (ask == "yes")
+                                                    {
+
+                                                        Random randomdayofweek = new Random();
+
+                                                        var list2 = new List<string> { "satarday", "sunday", "monday", "tuesday", "thursday" };
+
+
+                                                        Student[] lessons = new Student[20];
+                                                        lessons[lessoncounter] = new Student(lesson[temp], lessoncounter);
+                                                        lessoncounter++;
+                                                        //lesson[temp].nameL[lessoncounter] = Console.ReadLine();
+                                                        //lesson[temp].DayL[lessoncounter] = list2[randomdayofweek.Next(list2.Count)];
+                                                        //lesson[temp].hourtime[lessoncounter] = Convert.ToString(randomdayofweek.Next(1, 24));
+                                                        Console.WriteLine("if you want to continue choosing press yes");
+                                                        ask = Console.ReadLine();
+                                                    }
+                                                }
+
+                                                else
+                                                {
+                                                    Console.ForegroundColor = ConsoleColor.Red;
+                                                    Console.WriteLine("you can't select unit because you hasn't passed the previous lessons !");
+
+                                                    Console.ResetColor();
+                                                }
+
+
+
+                                            }
+
+
+
+                                            break;
+                                        }
+                                    //case "s":
+
+                                    //    break;
+
+
+                                    case "d":
+
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+
+                                            Console.WriteLine($"floor : {s[temp]._floornum}  room : {s[temp]._roomnum}  bed : {s[temp]._bednum} ");
+
+                                        }
+                                        break;
+                                    case "l":
+                                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                        Console.WriteLine("last letter : ");
+                                        Thread.Sleep(500);
+                                        Console.WriteLine(" You are allowed to come to hagvarts.");
+                                        Thread.Sleep(500);
+                                        Console.ResetColor();
+                                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                        Dambeldor.SendLetter(s[temp].name, s[temp].family, s[temp].timeGo, s[temp].cabinNum, s[temp].sitNum);
+                                        break;
+                                    case "sd":
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                            Console.WriteLine("enter your name : ");
+                                            Console.ResetColor();
+                                            string aimStuName = Console.ReadLine();
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
+
+                                            Console.WriteLine("enter your family : ");
+                                            Console.ResetColor();
+
+                                            string aimStuFamily = Console.ReadLine();
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
+
+                                            Console.WriteLine("write your letter : ");
+                                            Console.ResetColor();
+
+                                            string stuLetter = Console.ReadLine();
+
+                                            for (i = 0; i < studentNum; i++)
+                                            {
+                                                if (s[i].name == aimStuName && s[i].family == aimStuFamily)
+                                                {
 
 
 
 
-                                                            letters[dambeldorinbox] = stuLetter;
-                                                            dambeldorinbox++;
-                                                            temps[y] = i;
+                                                    letters[dambeldorinbox] = stuLetter;
+                                                    dambeldorinbox++;
+                                                    temps[y] = i;
+
+                                                }
+                                            }
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                            Console.WriteLine("Your letter has sent to Dambeldor.");
+                                            Console.ResetColor();
+
+
+                                            break;
+                                        }
+                                    case "pr":
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                            Console.WriteLine("Enter your Semester : ");
+                                            Console.ResetColor();
+                                            string AimSemester = Console.ReadLine();
+                                            Console.ForegroundColor = ConsoleColor.Magenta;
+
+                                            Console.ResetColor();
+
+                                            switch (AimSemester)
+                                            {
+                                                case "1":
+                                                    {
+
+                                                        Console.ForegroundColor = ConsoleColor.Cyan;
+                                                        Console.WriteLine($" You have to Collect and deliver these plants for semester{AimSemester} to the teacher :\nLavender\r\nGarlic\r\nBamboo\r\nDesert rose\r\n if You want to deliver your exercise enter 'y'");
+                                                        Console.ResetColor();
+                                                        string answer = Console.ReadLine();
+                                                        Console.ResetColor();
+                                                        if (answer == "y")
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                                            Console.WriteLine("Enter 4 name  plants that you have collected (if you couldn't collect, Enter nothing.) :  ");
+                                                            Console.ResetColor();
+                                                            s[temp].ScoreSemester1 += Botanical.TheListOfSemester1Plants(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
 
                                                         }
+
+
+                                                        break;
+
                                                     }
-                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-                                                    Console.WriteLine("Your letter has sent to Dambeldor.");
-                                                    Console.ResetColor();
-
-
-                                                    break;
-                                                }
-                                            case "pr":
-                                                {
-                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-                                                    Console.WriteLine("Enter your Semester : ");
-                                                    Console.ResetColor();
-                                                    string AimSemester = Console.ReadLine();
-                                                    Console.ForegroundColor = ConsoleColor.Magenta;
-
-                                                    Console.ResetColor();
-
-                                                    switch (AimSemester)
+                                                case "2":
                                                     {
-                                                        case "1":
-                                                            {
+                                                        Console.ForegroundColor = ConsoleColor.Cyan;
+                                                        Console.WriteLine($" You have to Collect and deliver these plants for semester{AimSemester} to the teacher :Elderberry\r\nAdenium obesum\r\nCucumber\r\nColumbine\r\n if You want to deliver your exercise enter 'y'");
+                                                        Console.ResetColor();
+                                                        string answer = Console.ReadLine();
+                                                        Console.ResetColor();
+                                                        if (answer == "y")
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                                            Console.WriteLine("Enter 4 name  plants that you have collected (if you couldn't collect, Enter nothing.) :  ");
+                                                            Console.ResetColor();
+                                                            s[temp].ScoreSemester2 = Botanical.TheListOfSemester2Plants(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
 
-                                                                Console.ForegroundColor = ConsoleColor.Cyan;
-                                                                Console.WriteLine($" You have to Collect and deliver these plants for semester{AimSemester} to the teacher :\nLavender\r\nGarlic\r\nBamboo\r\nDesert rose\r\n if You want to deliver your exercise enter 'y'");
-                                                                Console.ResetColor();
-                                                                string answer = Console.ReadLine();
-                                                                Console.ResetColor();
-                                                                if (answer == "y")
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-                                                                    Console.WriteLine("Enter 4 name  plants that you have collected (if you couldn't collect, Enter nothing.) :  ");
-                                                                    Console.ResetColor();
-                                                                    s[temp].ScoreSemester1 += Botanical.TheListOfSemester1Plants(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
-
-                                                                }
-
-
-                                                                break;
-
-                                                            }
-                                                        case "2":
-                                                            {
-                                                                Console.ForegroundColor = ConsoleColor.Cyan;
-                                                                Console.WriteLine($" You have to Collect and deliver these plants for semester{AimSemester} to the teacher :Elderberry\r\nAdenium obesum\r\nCucumber\r\nColumbine\r\n if You want to deliver your exercise enter 'y'");
-                                                                Console.ResetColor();
-                                                                string answer = Console.ReadLine();
-                                                                Console.ResetColor();
-                                                                if (answer == "y")
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-                                                                    Console.WriteLine("Enter 4 name  plants that you have collected (if you couldn't collect, Enter nothing.) :  ");
-                                                                    Console.ResetColor();
-                                                                    s[temp].ScoreSemester2 = Botanical.TheListOfSemester2Plants(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
-
-                                                                }
-                                                                break;
-                                                            }
-                                                        case "3":
-                                                            {
-                                                                Console.ForegroundColor = ConsoleColor.Cyan;
-
-                                                                Console.WriteLine($" You have to Collect and deliver these plants for semester{AimSemester} to the teacher :Ivy\r\nClover\r\nEnglish lavender\r\nCabbage\r\n if You want to deliver your exercise enter 'y'");
-                                                                Console.ResetColor();
-                                                                string answer = Console.ReadLine();
-                                                                Console.ResetColor();
-                                                                if (answer == "y")
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-                                                                    Console.WriteLine("Enter 4 name  plants that you have collected (if you couldn't collect, Enter nothing.) :  ");
-                                                                    Console.ResetColor();
-                                                                    s[temp].ScoreSemester3 = Botanical.TheListOfSemester2Plants(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
-
-                                                                }
-                                                                break;
-                                                            }
-                                                        case "4":
-                                                            {
-                                                                Console.ForegroundColor = ConsoleColor.Cyan;
-
-                                                                Console.WriteLine($" You have to Collect and deliver these plants for semester{AimSemester} to the teacher :Daisy\r\nLove-Lies-Bleeding\r\nNeem Tree\r\nrose\r\n if You want to deliver your exercise enter 'y'");
-                                                                Console.ResetColor();
-                                                                string answer = Console.ReadLine();
-                                                                Console.ResetColor();
-                                                                if (answer == "y")
-                                                                {
-                                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-                                                                    Console.WriteLine("Enter 4 name  plants that you have collected (if you couldn't collect, Enter nothing.) :  ");
-                                                                    Console.ResetColor();
-                                                                    s[temp].ScoreSemester4 = Botanical.TheListOfSemester2Plants(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
-
-                                                                }
-                                                                break;
-                                                            }
-
-                                                        default:
-                                                            break;
+                                                        }
+                                                        break;
                                                     }
-                                                    Console.WriteLine("Your practice saved and teacher will grade.");
-                                                    break;
-                                                }
-                                            case "ScoreB":
-                                                {
-                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-                                                    Console.WriteLine("Enter your Semester : ");
-                                                    Console.ResetColor();
-                                                    string AimSemester = Console.ReadLine();
-                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                    if (AimSemester == "1")
-                                                        Console.WriteLine($"Your score of Botanical in semester {AimSemester} is : {s[temp].ScoreSemester1}");
-                                                    if (AimSemester == "2")
-                                                        Console.WriteLine($"Your score of Botanical in semester {AimSemester} is : {s[temp].ScoreSemester2}");
-                                                    if (AimSemester == "3")
-                                                        Console.WriteLine($"Your score of Botanical in semester {AimSemester} is : {s[temp].ScoreSemester3}");
-                                                    if (AimSemester == "4")
-                                                        Console.WriteLine($"Your score of Botanical in semester {AimSemester} is : {s[temp].ScoreSemester4}");
-                                                    Console.ResetColor();
-                                                    break;
-                                                }
-
-                                            //Console.WriteLine("your lessons are : Sport, Literature, Botancial, Math, Physics");
-                                            //Console.WriteLine($"sport :teacher : {t[temp].name} {t[temp].family} time : {t[temp].TimeClass1}");
-                                            //Console.WriteLine(t[temp].Lesson1);
-                                            //Console.WriteLine(t[temp].TimeClass1);
-                                            //var list2 = new List<string> { "Sport", "Literature", "Botancial", "Math", "Physics" };
-
-                                            //DateTime date2 = DateTime.Now;
-                                            //Random r2 = new Random();
-                                            //for (i = 0; i < teacherNum; i++)
-                                            //{
-                                            //    int index = r2.Next(list2.Count);
-                                            //    t[i].Lesson1 = list2[index];
-
-                                            //    t[i].TimeClass1 = Convert.ToString(r2.Next(date2.Day, date2.Hour));
-
-
-
-                                            //}
-
-                                            case "log":
-                                                {
-                                                    Massages.logSemester1(s, temp);
-                                                    int sum = s[temp].Physics1Score + s[temp].ScoreSemester1 + s[temp].Math1Score + s[temp].Sport1Score;
-                                                    avg = sum / LessonsNumber;
-                                                    Console.ForegroundColor = ConsoleColor.Cyan;
-                                                    Console.WriteLine($"average => {avg}");
-                                                    if (avg > 10)
+                                                case "3":
                                                     {
-                                                        Console.WriteLine("you passed this semester and you can go next semester.");
-                                                        currentSemester++;
+                                                        Console.ForegroundColor = ConsoleColor.Cyan;
+
+                                                        Console.WriteLine($" You have to Collect and deliver these plants for semester{AimSemester} to the teacher :Ivy\r\nClover\r\nEnglish lavender\r\nCabbage\r\n if You want to deliver your exercise enter 'y'");
+                                                        Console.ResetColor();
+                                                        string answer = Console.ReadLine();
+                                                        Console.ResetColor();
+                                                        if (answer == "y")
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                                            Console.WriteLine("Enter 4 name  plants that you have collected (if you couldn't collect, Enter nothing.) :  ");
+                                                            Console.ResetColor();
+                                                            s[temp].ScoreSemester3 = Botanical.TheListOfSemester2Plants(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
+
+                                                        }
+                                                        break;
                                                     }
-                                                    Console.ResetColor();
+                                                case "4":
+                                                    {
+                                                        Console.ForegroundColor = ConsoleColor.Cyan;
+
+                                                        Console.WriteLine($" You have to Collect and deliver these plants for semester{AimSemester} to the teacher :Daisy\r\nLove-Lies-Bleeding\r\nNeem Tree\r\nrose\r\n if You want to deliver your exercise enter 'y'");
+                                                        Console.ResetColor();
+                                                        string answer = Console.ReadLine();
+                                                        Console.ResetColor();
+                                                        if (answer == "y")
+                                                        {
+                                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                                            Console.WriteLine("Enter 4 name  plants that you have collected (if you couldn't collect, Enter nothing.) :  ");
+                                                            Console.ResetColor();
+                                                            s[temp].ScoreSemester4 = Botanical.TheListOfSemester2Plants(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
+
+                                                        }
+                                                        break;
+                                                    }
+
+                                                default:
                                                     break;
-                                                }
+                                            }
+                                            Console.WriteLine("Your practice saved and teacher will grade.");
+                                            break;
+                                        }
+                                    case "ScoreB":
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                            Console.WriteLine("Enter your Semester : ");
+                                            Console.ResetColor();
+                                            string AimSemester = Console.ReadLine();
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                            if (AimSemester == "1")
+                                                Console.WriteLine($"Your score of Botanical in semester {AimSemester} is : {s[temp].ScoreSemester1}");
+                                            if (AimSemester == "2")
+                                                Console.WriteLine($"Your score of Botanical in semester {AimSemester} is : {s[temp].ScoreSemester2}");
+                                            if (AimSemester == "3")
+                                                Console.WriteLine($"Your score of Botanical in semester {AimSemester} is : {s[temp].ScoreSemester3}");
+                                            if (AimSemester == "4")
+                                                Console.WriteLine($"Your score of Botanical in semester {AimSemester} is : {s[temp].ScoreSemester4}");
+                                            Console.ResetColor();
+                                            break;
+                                        }
+
+                                    //Console.WriteLine("your lessons are : Sport, Literature, Botancial, Math, Physics");
+                                    //Console.WriteLine($"sport :teacher : {t[temp].name} {t[temp].family} time : {t[temp].TimeClass1}");
+                                    //Console.WriteLine(t[temp].Lesson1);
+                                    //Console.WriteLine(t[temp].TimeClass1);
+                                    //var list2 = new List<string> { "Sport", "Literature", "Botancial", "Math", "Physics" };
+
+                                    //DateTime date2 = DateTime.Now;
+                                    //Random r2 = new Random();
+                                    //for (i = 0; i < teacherNum; i++)
+                                    //{
+                                    //    int index = r2.Next(list2.Count);
+                                    //    t[i].Lesson1 = list2[index];
+
+                                    //    t[i].TimeClass1 = Convert.ToString(r2.Next(date2.Day, date2.Hour));
 
 
 
+                                    //}
 
+                                    case "log":
+                                        {
+                                            Massages.logSemester1(s, temp);
+                                            int sum = s[temp].Physics1Score + s[temp].ScoreSemester1 + s[temp].Math1Score + s[temp].Sport1Score;
+                                            avg = sum / LessonsNumber;
+                                            Console.ForegroundColor = ConsoleColor.Cyan;
+                                            Console.WriteLine($"average => {avg}");
+                                            if (avg > 10)
+                                            {
+                                                Console.WriteLine("you passed this semester and you can go next semester.");
+                                                currentSemester++;
+                                            }
+                                            Console.ResetColor();
+                                            break;
+                                        }
 
-
-
-
-                                        
-
-
-
-
-
-                                    }
                                 }
+
+
+
 
 
 

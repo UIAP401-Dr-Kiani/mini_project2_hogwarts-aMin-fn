@@ -30,7 +30,8 @@ namespace hagvarts
            
         }
 
-
+        public bool isGoToHagowartz = false;
+        public bool isLetterSent = false;
         public int _semester;
         public int _bednum;
         public int _roomnum;
