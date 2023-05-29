@@ -9,9 +9,11 @@ namespace hagvarts
 {
     public class Dambeldor:AllowedPeople
     {
-        public static void SendLetter(string name , string family , DateTime timeGo ,int cabinNum , int sitNum )
+        public static string SendLetter(string name , string family , DateTime timeGo ,int cabinNum , int sitNum )
         {
-            Console.WriteLine($" Your ticket is at : {timeGo} in the {cabinNum} cabin and {sitNum} sit");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+             return $" Your ticket is at : {timeGo} in the {cabinNum} cabin and {sitNum} sit";
+            Console.ResetColor();
             
 
         }

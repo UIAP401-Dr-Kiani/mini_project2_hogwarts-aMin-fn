@@ -17,3 +17,5 @@ C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\h
 C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.csproj.CopyComplete
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.Properties.Resources.resources
+C:\Users\ASUS\OneDrive\Desktop\c#\hagvartz proj\mini_project2_hogwarts-aMin-fn\hagvarts\hagvarts\obj\Debug\hagvarts.csproj.GenerateResource.cache

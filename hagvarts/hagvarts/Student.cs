@@ -32,6 +32,8 @@ namespace hagvarts
 
         public bool isGoToHagowartz = false;
         public bool isLetterSent = false;
+        public bool isGoHome = false;
+        public string letters;
         public int _semester;
         public int _bednum;
         public int _roomnum;
